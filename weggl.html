@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta charset="utf-8" />
-		<title>webgl_test_1</title>
-		<style>
-		</style>
+	<meta charset="utf-8" />
+	<title>webgl_test_1</title>
 </head>
 <body>
-		<div id="sence"></div>
-		<script>
-				var canvas = document.createElement("canvas");
-				canvas.style.width="900px";
-				canvas.style.height="900px";
-				canvas.style.border="1px solid black";
-				var ctx = canvas.getContext("webgl");	
-				document.body.appendChild(canvas);						
-				document.body.style.textAlign="center";
+	<script>
+		var canvas = document.createElement("canvas");
+		canvas.style.width="900px";
+		canvas.style.height="900px";
+		canvas.style.border="1px solid black";
+		var ctx = canvas.getContext("webgl");	
+		document.body.appendChild(canvas);						
+		document.body.style.textAlign="center";
 				
-				var VSHADER_SOURCE='void main(){gl_Position=vec4(0.0,0.0,0.0,1.0);gl_PointSize=10.0;}';
-				var FSHADER_SOURCE='void main(){gl_FragColor=vec4(1.0,0.0,0.0,1.0);}';
-				initShaders(ctx,VSHADER_SOURCE,FSHADER_SOURCE);
-				ctx.clearColor(0,0,0,1.0);
-				ctx.clear(ctx.COLOR_BUFFER_BIT);
-				ctx.drawArrays(ctx.POINTS,0,1);
-		</script>
+		var VSHADER_SOURCE='void main(){gl_Position=vec4(0.0,0.0,0.0,1.0);gl_PointSize=10.0;}';
+		var FSHADER_SOURCE='void main(){gl_FragColor=vec4(1.0,0.0,0.0,1.0);}';
+		initShaders(ctx,VSHADER_SOURCE,FSHADER_SOURCE);
+		ctx.clearColor(0,0,0,1.0);
+		ctx.clear(ctx.COLOR_BUFFER_BIT);
+		ctx.drawArrays(ctx.POINTS,0,1);
+	</script>
 </body>
 </html>
