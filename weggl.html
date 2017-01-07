@@ -16,10 +16,38 @@
 				
 		var VSHADER_SOURCE='void main(){gl_Position=vec4(0.0,0.0,0.0,1.0);gl_PointSize=10.0;}';
 		var FSHADER_SOURCE='void main(){gl_FragColor=vec4(1.0,0.0,0.0,1.0);}';
-		initShaders(ctx,VSHADER_SOURCE,FSHADER_SOURCE);
+
+
+		var vertexShader=ctx.createShader(ctx.VERTEX_SHADER);
+		ctx.shaderSource(vertexShader,VSHADER_SOURCE);
+		ctx.compileShader(vertexShader);
+
+		var fragmentShader=ctx.createShader(ctx.FRAGMENT_SHADER);
+		ctx.shaderSource(fragmentShader,FSHADER_SOURCE);
+		ctx.compileShader(fragmentShader);
+
+
+		var program=ctx.createProgram();
+
+		ctx.attachShader(program,vertexShader);
+		ctx.attachShader(program,fragmentShader);
+		ctx.linkProgram(program);
+
+		if(!ctx.getProgramParameter(program,ctx.LINK_STATUS)){
+			var info = ctx.getProgramInfoLog(program);
+			throw "Could not compile WebGL program.";
+		}
+
+		ctx.useProgram(program);
+		//ctx.bindBuffer(ctx.ARRAY_BUFFER,buffer);
+		//ctx.enableVertexAttribArray(attributeLocation);
+		//ctx.vertexAttribPointer(attributeLocation,3,ctx.FLOAT,false,0,0//);
+
 		ctx.clearColor(0,0,0,1.0);
 		ctx.clear(ctx.COLOR_BUFFER_BIT);
 		ctx.drawArrays(ctx.POINTS,0,1);
+
+		ctx.deleteProgram(program);
 	</script>
 </body>
 </html>
