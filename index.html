@@ -9,18 +9,20 @@
   <form>
     <input type="button" value="Window Object" onclick="view()"/>
   </form>
-  <div id="wrap">
-    <div id="menu"></div>
-    <div id="content"></div>
-  </div>
+  <div id="wrap"></div>
   <script>
     function view(){
-      document.getElementById("menu").innerHTML="";
-      document.getElementById("content").innerHTML="";
+      var lname=document.createElement("div");    
+      var rcontent=document.createElement("div");
+      document.getElementById("wrap").appendChild(lname);
+      document.getElementById("wrap").appendChild(rcontent);
+      
+      document.lname.innerHTMl="";
+      document.rcontent.innerHTML="";
       for (var i in window)
       {
-        document.getElementById("menu").innerHTML+=(i+"<br/>");
-        document.getElementById("content").innerHTML+=(window[i]+"<br/>");            
+        document.lname.innerHTML+=(i+"<br/>");
+        document.rcontent.innerHTML+=(window[i]+"<br/>");            
       }
     }
   </script>
