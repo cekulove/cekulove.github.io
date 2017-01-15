@@ -6,18 +6,23 @@
   <link rel="stylesheet" type="text/css" href="css/index.css" />
 </head>
 <body>
+  <form>
+    <input type="button" value="Window Object" onclick="view()"/>
+  </form>
   <div id="wrap">
     <div id="menu"></div>
     <div id="content"></div>
   </div>
   <script>
-    (function(){
+    function view(){
+      document.getElementById("menu").innerHTML="";
+      document.getElementById("content").innerHTML="";
       for (var i in window)
       {
         document.getElementById("menu").innerHTML+=(i+"<br/>");
         document.getElementById("content").innerHTML+=(window[i]+"<br/>");            
       }
-    })();
+    }
   </script>
 </body>
 </html>
