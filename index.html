@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>index</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <meta charset="utf-8" />
+  <title>index</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
 </head>
 <body>
-    <div id="wrap">
-        <div id="menu"></div>
-        <div id="content"></div>
-    </div>
-    <script>
-        for (var i in window)
-        {
-            document.getElementById("menu").innerHTML+=(i+"<br/>");
-            document.getElementById("content").innerHTML+=(window[i]+"<br/>");            
-        }
-    </script>
+  <div id="wrap">
+    <div id="menu"></div>
+    <div id="content"></div>
+  </div>
+  <script>
+    for (var i in window)
+    {
+      document.getElementById("menu").innerHTML+=(i+"<br/>");
+      document.getElementById("content").innerHTML+=(window[i]+"<br/>");            
+    }
+  </script>
 </body>
 </html>
