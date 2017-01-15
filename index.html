@@ -16,19 +16,15 @@
   <script>
     function view(){
       document.getElementById("wrap").innerHTML="";
-      var lname=document.createElement("div");    
-      var rcontent=document.createElement("div");
-      lname.id="lname";
-      rcontent.id="rcontent";
-      document.getElementById("wrap").appendChild(lname);
-      document.getElementById("wrap").appendChild(rcontent);
+      var view=document.createElement("div");
+      vie.id="view";
       
-      lname.innerHTML="";
-      rcontent.innerHTML="";
+      document.getElementById("view").appendChild(view);
+      
+      view.innerHTML="";
       for (var i in window)
       {
-        lname.innerHTML+=(i+"<br/>");
-        rcontent.innerHTML+=(window[i]+"<br/>");            
+        view.innerHTML+=(i+"--------"+window[i]+"<br/>");         
       }
     }
   </script>
