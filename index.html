@@ -17,12 +17,12 @@
       document.getElementById("wrap").appendChild(lname);
       document.getElementById("wrap").appendChild(rcontent);
       
-      document.lname.innerHTML="";
-      document.rcontent.innerHTML="";
+      lname.innerHTML="";
+      rcontent.innerHTML="";
       for (var i in window)
       {
-        document.lname.innerHTML+=(i+"<br/>");
-        document.rcontent.innerHTML+=(window[i]+"<br/>");            
+        lname.innerHTML+=(i+"<br/>");
+        rcontent.innerHTML+=(window[i]+"<br/>");            
       }
     }
   </script>
