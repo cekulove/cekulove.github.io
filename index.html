@@ -25,7 +25,7 @@
       view.innerHTML="";
       for (var i in window)
       {
-        view.innerHTML+=("<input class='blue button' value="+i+"onclick='alert("+i+")'/>"+"<br/><br/>");
+        view.innerHTML+=(i+"<input class='blue button' value='click me' onclick='alert("+i+")'/>"+"<br/><br/>");
         //view.innerHTML+=(i+"　　　　<font class='bself'>"+window[i]+"</font><br/>");         
       }
     }
