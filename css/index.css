@@ -28,6 +28,8 @@ button {
   border: 1px solid #0f0;
   color: #0f0;
   margin: 10px 0;
+  border: 0 solid black;
+  border-radius: 5px;
 }
 .bself {
   color: #f60;
