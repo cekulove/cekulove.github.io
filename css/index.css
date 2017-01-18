@@ -20,6 +20,7 @@ button {
   background-color: black;
   border: 1px solid #0f0;
   color: #0f0;
+  margin: 10px 0;
 }
 .bself {
   color: #f60;
