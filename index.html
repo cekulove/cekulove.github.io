@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <title>index</title>
-  <link rel = "stylesheet" type="text/css" href="css/index.css" />
-  <link rel ="stylesheet" type="text/css" href="css/buttonStyle.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link rel="stylesheet" type="text/css" href="css/buttonStyle.css" />
 </head>
 <body>
   <form>
@@ -25,7 +25,7 @@
       view.innerHTML="";
       for (var i in window)
       {
-        view.innerHTML+=("<button onclick='alert("+i+")'>"+i+"</button>"+"<br/><br/>");
+        view.innerHTML+=("<button class='blue' onclick='alert("+i+")'>"+i+"</button>"+"<br/><br/>");
         //view.innerHTML+=(i+"　　　　<font class='bself'>"+window[i]+"</font><br/>");         
       }
     }
