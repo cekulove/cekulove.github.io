@@ -24,7 +24,7 @@
       view.innerHTML="";
       for (var i in window)
       {
-        view.innerHTML+=("<button>"+i+"</button>"+"<br/>");
+        view.innerHTML+=("<button onclick="document.getElementsByTagName("button")[i].innerHTML=window[i];">"+i+"</button>"+"<br/>");
         //view.innerHTML+=(i+"　　　　<font class='bself'>"+window[i]+"</font><br/>");         
       }
     }
