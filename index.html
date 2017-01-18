@@ -21,12 +21,10 @@
       
       document.getElementById("wrap").appendChild(view);
       
-      view.innerHT
-      
-      ML="";
+      view.innerHTML="";
       for (var i in window)
       {
-        view.innerHTML+=("<button onclick="alert(window[i])">"+i+"</button>"+"<br/>");
+        view.innerHTML+=("<button>"+i+"</button>"+"<br/>");
         //view.innerHTML+=(i+"　　　　<font class='bself'>"+window[i]+"</font><br/>");         
       }
     }
