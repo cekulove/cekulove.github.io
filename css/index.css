@@ -3,7 +3,7 @@
   margin: 0 auto;        
   background-color: #ccc;
   overflow: hidden;
-  color: #0f0;
+  color: white;
 }
 #view {
   width: 900px;
@@ -17,6 +17,7 @@
 }
 
 a {
+  color: white;
   display: inline-block;
   font-size: 32px;
   border:0px solid black;
