@@ -19,11 +19,12 @@
 a {
   color: white;
   display: inline-block;
-  font-size: 32px;
+  font-size: 16px;
   border:0px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 5px 0;
   padding: 6px 10px;
+  text-decoration: none;
 }
 
 
