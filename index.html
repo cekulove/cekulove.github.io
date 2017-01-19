@@ -8,10 +8,10 @@
 </head>
 <body>
   <form>
-    <a class="blue button" onclick="view()">Window Object</a><br/>
-    <a class="green button" onclick="javascript:location='webGL/test_1.html'">webGL_test1</a><br/>
-    <a class="orange button" onclick="javascript:location='webGL/test_2.html'">webGL_test2</a><br/>
-    <a class="red button" onclick="javascript:location='webGL/test_3.html'">webGL_test13</a><br/>
+    <a class="blue button" onclick="view()" href="#">Window Object</a><br/>
+    <a class="green button" onclick="javascript:location='webGL/test_1.html'" href="#">webGL_test1</a><br/>
+    <a class="orange button" onclick="javascript:location='webGL/test_2.html'" href="#">webGL_test2</a><br/>
+    <a class="red button" onclick="javascript:location='webGL/test_3.html'" href="#">webGL_test13</a><br/>
   </form>
   <div id="wrap"></div>
   <script>
@@ -25,7 +25,7 @@
       view.innerHTML="";
       for (var i in window)
       {
-        view.innerHTML+=("<a class='orange button' onclick='alert("+i+")'>"+i+"</a>"+"<br/>");
+        view.innerHTML+=("<a class='orange button' onclick='alert("+i+")' href='#'>"+i+"</a>"+"<br/>");
         
         //view.innerHTML+=(i+"<input type='button' class='blue button' value='click me' onclick='alert("+i+")'/>"+"<br/><br/>");
         //view.innerHTML+=(i+"　　　　<font class='bself'>"+window[i]+"</font><br/>");         
