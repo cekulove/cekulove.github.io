@@ -20,11 +20,13 @@ a {
   display: inline-block;
   font-size: 32px;
   border:0px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 5px 0;
   padding: 5px;
 }
-button {
+
+
+/*button {
   font-size: 32px;
   background-color: black;
   border: 1px solid #0f0;
@@ -35,6 +37,6 @@ button {
 }
 .bself {
   color: #f60;
-}
+}*/
 
 
