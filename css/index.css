@@ -22,7 +22,7 @@ a {
   border:0px solid black;
   border-radius: 10px;
   margin: 5px 0;
-  padding: 5px;
+  padding: 6px 10px;
 }
 
 
@@ -38,5 +38,3 @@ a {
 .bself {
   color: #f60;
 }*/
-
-
