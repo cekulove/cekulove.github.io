@@ -11,8 +11,8 @@ body {
 #view {
   width: 900px;
   float: left;
-  background-color: black;
-  border: 3px solid black;
+  background-color: grey;
+  border: 3px solid grey;
   border-radius: 5px;
   box-shadow: 5px 5px 5px #333,5px 5px 5px #333;
   margin: 10px;
