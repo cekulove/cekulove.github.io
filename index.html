@@ -12,6 +12,7 @@
     <a class="green button" onclick="javascript:location='webGL/test_1.html'" href="#">webGL_test1</a><br/>
     <a class="orange button" onclick="javascript:location='webGL/test_2.html'" href="#">webGL_test2</a><br/>
     <a class="red button" onclick="javascript:location='webGL/test_3.html'" href="#">webGL_test13</a><br/>
+    <a class="magenta buttom" onclick="te()">Hello World !</a><br/>
   </form>
   <div id="wrap"></div>
   <script>
@@ -30,6 +31,9 @@
         //view.innerHTML+=(i+"<input type='button' class='blue button' value='click me' onclick='alert("+i+")'/>"+"<br/><br/>");
         //view.innerHTML+=(i+"　　　　<font class='bself'>"+window[i]+"</font><br/>");         
       }
+    }
+    function te(){
+      document.write("#include&#60;stdio.h&#62;<br/>int main()<br/>{<br/>printf("Hello World !");<br/>return 0;<br/>}<br/>");
     }
   </script>
 </body>
