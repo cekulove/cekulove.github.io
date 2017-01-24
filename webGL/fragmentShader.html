@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>webgl_test_2</title>
+	<title>webgl_test_1</title>
 </head>
 <body>
 	<script>
@@ -13,19 +13,18 @@
 		canvas.height="1000";
 		canvas.style.border="1px solid black";
 		var ctx = canvas.getContext("webgl");
-		document.body.appendChild(canvas);						   
+		document.body.appendChild(canvas);						
 		document.body.style.textAlign="center";
-	
+				
 		var VSHADER_SOURCE=
-		'	attribute vec4 a_Position;		'+
-		'	void main(){					'+
-		'		gl_Position=a_Position;		'+
-		'		gl_PointSize=10.0;			'+
-		'	}								';
+		'	void main(){								'+
+		'		gl_Position=vec4(0.0,0.0,0.0,1.0);		'+
+		'		gl_PointSize=10.0;						'+
+		'	}											';
 
 		var FSHADER_SOURCE=
 		'	void main(){								'+
-		'		gl_FragColor=vec4(1.0,0.5,0.0,1.0);		'+
+		'		gl_FragColor=vec4(1.0,0.0,0.0,1.0);		'+
 		'	}											';
 
 		var vertexShader=ctx.createShader(ctx.VERTEX_SHADER);
@@ -49,15 +48,9 @@
 
 		ctx.useProgram(program);
 
-		var a_Position=ctx.getAttribLocation(program,"a_Position");
-		if(a_Position<0){
-			throw "Faild to get the storage location of a_Position";
-		}
-		ctx.vertexAttrib3f(a_Position , 0.0 , 0.0 , 0.0 );
-
 		ctx.clearColor(0.0,0.0,0.0,1.0);
 		ctx.clear(ctx.COLOR_BUFFER_BIT);
-		ctx.drawArrays(ctx.POINTS,0,1);		   
+		ctx.drawArrays(ctx.PONTS,0,1);
 
 		ctx.deleteProgram(program);
 	</script>
