@@ -17,16 +17,16 @@
 		document.body.style.textAlign="center";
 	
 		var VSHADER_SOURCE=
-		'	attribute vec4 a_Position;		'+
-		'	void main(){					'+
-		'		gl_Position=a_Position;		'+
-		'		gl_PointSize=10.0;			'+
-		'	}								';
+		'	attribute vec4 a_Position;	'+
+		'	void main(){			'+
+		'		gl_Position=a_Position;	'+
+		'		gl_PointSize=10.0;	'+
+		'	}				';
 
 		var FSHADER_SOURCE=
-		'	void main(){								'+
-		'		gl_FragColor=vec4(1.0,0.5,0.0,1.0);		'+
-		'	}											';
+		'	void main(){					'+
+		'		gl_FragColor=vec4(1.0,0.5,0.0,1.0);	'+
+		'	}						';
 
 		var vertexShader=ctx.createShader(ctx.VERTEX_SHADER);
 		ctx.shaderSource(vertexShader,VSHADER_SOURCE);
