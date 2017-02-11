@@ -1,9 +1,10 @@
-var canvas = document.createElement("canvas");
-canvas.style.width="900px";
-canvas.style.height="900px";
-canvas.width="1000";
-canvas.height="1000";
-canvas.style.border="1px solid black";
+function test1(){
+	var canvas = document.createElement("canvas");
+	canvas.style.width="900px";
+	canvas.style.height="900px";
+	canvas.width="1000";
+	canvas.height="1000";
+	canvas.style.border="1px solid black";
 var ctx = canvas.getContext("webgl");
 document.getElementById("wrap").appendChild(canvas);						
 document.getElementById("wrap").style.textAlign="center";
@@ -45,3 +46,4 @@ ctx.clear(ctx.COLOR_BUFFER_BIT);
 ctx.drawArrays(ctx.PONTS,0,1);
 
 ctx.deleteProgram(program);
+}
