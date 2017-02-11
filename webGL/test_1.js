@@ -5,8 +5,8 @@ canvas.width="1000";
 canvas.height="1000";
 canvas.style.border="1px solid black";
 var ctx = canvas.getContext("webgl");
-document.body.appendChild(canvas);						
-document.body.style.textAlign="center";
+document.getElementById("wrap").appendChild(canvas);						
+document.getElementById("wrap").style.textAlign="center";
 				
 		
 var VSHADER_SOURCE=
