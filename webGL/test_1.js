@@ -6,8 +6,7 @@ function test1(){
 	canvas.height="1000";
 	canvas.style.border="1px solid black";
 var ctx = canvas.getContext("webgl");
-document.getElementById("wrap").appendChild(canvas);						
-document.getElementById("wrap").style.textAlign="center";
+document.getElementById("view").appendChild(canvas);	
 				
 		
 var VSHADER_SOURCE=
