@@ -1,0 +1,42 @@
+#content {
+  width: 960px;
+  margin: 0 auto;        
+  background-color: #ccc;
+  overflow: hidden;
+  color: white;
+}
+#view {
+  width: 900px;
+  float: left;
+  background-color: black;
+  border: 3px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #333,5px 5px 5px #333;
+  margin: 10px;
+  padding: 10px;
+}
+
+a {
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  border:0px solid black;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 6px 10px;
+  text-decoration: none;
+}
+
+
+/*button {
+  font-size: 32px;
+  background-color: black;
+  border: 1px solid #0f0;
+  color: #0f0;
+  margin: 10px 0;
+  border: 0 solid black;
+  border-radius: 10px;
+}
+.bself {
+  color: #f60;
+}*/
