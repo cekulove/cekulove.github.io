@@ -5,8 +5,8 @@
     <description>This is a my blog.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Feb 2017 00:46:16 +0800</pubDate>
-    <lastBuildDate>Sat, 18 Feb 2017 00:46:16 +0800</lastBuildDate>
+    <pubDate>Sat, 18 Feb 2017 00:53:03 +0800</pubDate>
+    <lastBuildDate>Sat, 18 Feb 2017 00:53:03 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -36,6 +36,8 @@ clean:
 	rm HelloWorld.o
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Feb 2017 23:46:05 +0800</pubDate>
         <link>http://localhost:5001/jekyll/update/2017/02/17/HelloWorld.html</link>
