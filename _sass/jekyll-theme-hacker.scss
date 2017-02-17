@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import "rouge-base16-dark";
 
 body {
@@ -60,7 +61,8 @@ header h1 {
 }
 
 header h1:before {
-  content: "穿着小马甲’s ";
+  content: url(../images/home.png);
+  margin-right: 20px;
   font-size: 24px;
 }
 
