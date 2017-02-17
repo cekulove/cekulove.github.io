@@ -17,7 +17,7 @@ int main()
 }
 ```
 
-```javascript
+```
 /* makefile */
 
 main: HelloWorld.o HelloWorld
