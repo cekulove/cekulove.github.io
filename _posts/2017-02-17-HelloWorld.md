@@ -6,7 +6,8 @@ categories: jekyll update
 ---
 <h2>{{ page.title }}</h2>  
 
-```javascriptfunction test1(){
+```javascript
+function test1(){
 	var canvas = document.createElement("canvas");
 	canvas.style.width="900px";
 	canvas.style.height="900px";
