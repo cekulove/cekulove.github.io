@@ -8,16 +8,16 @@ categories: jekyll update
 
 ```javascript
 canvas = document.createElement("canvas");
-        canvas.style.width="900px";
-        canvas.style.height="900px";
-        canvas.width="1000";
-        canvas.height="1000";
-        canvas.style.border="1px solid black";
-        var ctx = canvas.getContext("webgl");
-        document.body.appendChild(canvas);                         
-        document.body.style.textAlign="center";
-        var VSHADER_SOURCE=
-        '       attribute vec4 a_Position;      '+
+canvas.style.width="900px";
+canvas.style.height="900px";
+canvas.width="1000";
+canvas.height="1000";
+canvas.style.border="1px solid black";
+var ctx = canvas.getContext("webgl");
+document.body.appendChild(canvas);                   
+document.body.style.textAlign="center";
+var VSHADER_SOURCE=
+       '       attribute vec4 a_Position;     '+
         '       void main(){                    '+
         '               gl_Position=a_Position; '+
         '               gl_PointSize=10.0;      '+
