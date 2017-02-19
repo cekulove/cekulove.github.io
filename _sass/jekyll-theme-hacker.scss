@@ -1,7 +1,11 @@
 @charset "utf-8";
 @import "rouge-base16-dark";
 
-
+/* theme */
+code.hljs {
+	background: black;
+}
+/* end */
 body {
   margin: 0;
   padding: 0;
