@@ -1,12 +1,17 @@
 @charset "utf-8";
 @import "rouge-base16-dark";
 
+@media only screen and (max-width:1024){
+	body {
+		font-size: 12px;
+	}
+}
 body {
   margin: 0;
   padding: 0;
   background: #151515 url("../images/bkg.png") 0 0;
   color: #eaeaea;
-  font-size: 1.5vmin;
+  font-size: 14px;
   line-height: 1.5;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
