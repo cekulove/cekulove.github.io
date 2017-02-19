@@ -5,14 +5,14 @@
     <description>This is a my blog.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Feb 2017 18:38:45 +0800</pubDate>
-    <lastBuildDate>Sun, 19 Feb 2017 18:38:45 +0800</lastBuildDate>
+    <pubDate>Sun, 19 Feb 2017 19:02:07 +0800</pubDate>
+    <lastBuildDate>Sun, 19 Feb 2017 19:02:07 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
         <title>webGL_Test</title>
         <description>&lt;script&gt;
-	document.write(&quot;&lt;h6 style='color: #0f0;'&gt;Screen: &quot;+screen.width+&quot; x &quot;+screen.height+&quot;&lt;/h6&gt;&quot;);
+	document.write(&quot;&lt;a style='color: #0f0;'&gt;Screen: &quot;+screen.width+&quot; x &quot;+screen.height+&quot;&lt;/a&gt;&quot;);
 &lt;/script&gt;
 
 &lt;h2&gt;webGL_Test&lt;/h2&gt;
