@@ -24,19 +24,6 @@ body {
   max-width: 900px;
   margin: 0 auto;
 }
-@media only screen and (min-width:1200px){
-	body {
-		font-size: 16px;
-	}
-	.container {
-		max-width: 1210px;
-	}
-}
-@media only screen and (max-width:1024px){
-	body {
-		font-size: 12px;
-	}
-}
 
 section {
   display: block;
@@ -266,3 +253,20 @@ a {
 .cf {
   zoom:1;
 }
+@media only screen and (min-width:1200px){
+	body {
+		font-size: 16px;
+	}
+	.container {
+		max-width: 1210px;
+	}
+}
+@media only screen and (max-width:1024px){
+	body {
+		font-size: 12px;
+	}
+	header h1 {
+	margin: 0;
+	}
+}
+
