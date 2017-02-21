@@ -5,8 +5,8 @@
     <description>This is a my blog.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Feb 2017 23:36:06 +0800</pubDate>
-    <lastBuildDate>Tue, 21 Feb 2017 23:36:06 +0800</lastBuildDate>
+    <pubDate>Tue, 21 Feb 2017 23:59:44 +0800</pubDate>
+    <lastBuildDate>Tue, 21 Feb 2017 23:59:44 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
