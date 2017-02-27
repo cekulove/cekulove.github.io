@@ -10,8 +10,14 @@ layout: default
     {% endfor %}
 </ul>
 <hr/>
-{% endfor %}
- --> 
+{% endfor %} -->
+<div class="animationButton">
+	{% for category in site.categories %}
+		<a href="#" class="red button">{{ category | first }}</a>
+	{% endfor %}
+</div>
+
+
 <table>
 	<tr>
 		<th>title</th>
