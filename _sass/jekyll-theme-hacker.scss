@@ -62,7 +62,7 @@ header h1 {
   font-size: 30px;
   line-height: 1.5;
   margin: 0 0 0 -40px;
-  font-family: "XXII_DIRTY-ARMY", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family:  Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 50px;
   color: #0f0;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
@@ -265,6 +265,10 @@ a {
 	}
 	.container {
 		max-width: 1210px;
+	}
+	header h1 {
+		font-family: 'XXII_DIRTY-ARMY', Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+		font-size: 100px;
 	}
 }
 @media only screen and (max-width:1024px){
