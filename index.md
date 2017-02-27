@@ -13,7 +13,7 @@ layout: default
 {% endfor %} -->
 <div class="animationButton">
 	{% for category in site.categories %}
-		<a href="#" class="red button">{{ category | first }}</a>
+		<a href="#" class="{% circle 'red button','orange button' %}">{{ category | first }}</a>
 	{% endfor %}
 </div>
 
