@@ -21,7 +21,7 @@ layout: default
 	{% for category in site.categories %}
 		{% for post in category.last %}
 			<tr>
-				<td><a>{{ post.title }}</a></td>
+				<td><a href="{{ post.url }}">{{ post.title }}</a></td>
 				<td>{{ post.date | date:"%Y-%m-%d" }}</td>
 				<td>{{ category | first }}</td>
 			</tr>

@@ -1,6 +1,12 @@
 @charset "utf-8";
 @import "rouge-base16-dark";
-
+@font-face {
+            font-family: 'XXII_DIRTY-ARMY';
+            src: url('../fonts/XXII_DIRTY-ARMYt.eot');
+            src: url('../fonts/XXII_DIRTY-ARMY.eot?#iefix') format('embedded-opentype'), url('../fonts/XXII_DIRTY-ARMY.woff') format('woff'), url('../fonts/XXII_DIRTY-ARMY.ttf') format('truetype'), url('../fonts/XXII_DIRTY-ARMY.svg#XXII_DIRTY-ARMY') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
 /* theme */
 code.hljs {
 	background: black;
@@ -56,9 +62,9 @@ header h1 {
   font-size: 30px;
   line-height: 1.5;
   margin: 0 0 0 -40px;
-  font-weight: bold;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: #b5e853;
+  font-family: "XXII_DIRTY-ARMY", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size: 50px;
+  color: #0f0;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
                0 0 5px rgba(181, 232, 83, 0.1),
                0 0 10px rgba(181, 232, 83, 0.1);
