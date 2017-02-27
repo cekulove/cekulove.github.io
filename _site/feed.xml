@@ -2,12 +2,82 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ever Dream</title>
-    <description>This is a my blog.</description>
+    <description>总有刁民想害朕……但朕才是最强的一个!</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Feb 2017 23:59:44 +0800</pubDate>
-    <lastBuildDate>Tue, 21 Feb 2017 23:59:44 +0800</lastBuildDate>
+    <pubDate>Mon, 27 Feb 2017 21:47:30 +0800</pubDate>
+    <lastBuildDate>Mon, 27 Feb 2017 21:47:30 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>目录</title>
+        <description>
+&lt;h2&gt;test&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;27/02/2017&lt;a href=&quot;/test/2017/02/27/ttt.html&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;15/02/2017&lt;a href=&quot;/test/2017/02/15/welcome-to-jekyll.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;javascript&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;17/02/2017&lt;a href=&quot;/javascript/2017/02/17/HelloWorld.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;asm&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;19/02/2017&lt;a href=&quot;/asm/2017/02/19/asm.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;C&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;27/02/2017&lt;a href=&quot;/c/2017/02/27/testC.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Feb 2017 17:08:55 +0800</pubDate>
+        <link>http://localhost:5001/test/2017/02/27/ttt.html</link>
+        <guid isPermaLink="true">http://localhost:5001/test/2017/02/27/ttt.html</guid>
+        
+        
+        <category>test</category>
+        
+      </item>
+    
+      <item>
+        <title>第一个C程序</title>
+        <description>&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World !&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt; &lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Feb 2017 12:11:05 +0800</pubDate>
+        <link>http://localhost:5001/c/2017/02/27/testC.html</link>
+        <guid isPermaLink="true">http://localhost:5001/c/2017/02/27/testC.html</guid>
+        
+        
+        <category>C</category>
+        
+      </item>
     
       <item>
         <title>第一个汇编程序</title>
@@ -28,13 +98,11 @@ end
 
 </description>
         <pubDate>Sun, 19 Feb 2017 19:33:05 +0800</pubDate>
-        <link>http://localhost:5001/jekyll/update/2017/02/19/01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/jekyll/update/2017/02/19/01.html</guid>
+        <link>http://localhost:5001/asm/2017/02/19/asm.html</link>
+        <guid isPermaLink="true">http://localhost:5001/asm/2017/02/19/asm.html</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>asm</category>
         
       </item>
     
@@ -106,13 +174,11 @@ end
 &lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Feb 2017 23:46:05 +0800</pubDate>
-        <link>http://localhost:5001/jekyll/update/2017/02/17/HelloWorld.html</link>
-        <guid isPermaLink="true">http://localhost:5001/jekyll/update/2017/02/17/HelloWorld.html</guid>
+        <link>http://localhost:5001/javascript/2017/02/17/HelloWorld.html</link>
+        <guid isPermaLink="true">http://localhost:5001/javascript/2017/02/17/HelloWorld.html</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>javascript</category>
         
       </item>
     
@@ -134,13 +200,11 @@ end
 
 </description>
         <pubDate>Wed, 15 Feb 2017 21:09:05 +0800</pubDate>
-        <link>http://localhost:5001/jekyll/update/2017/02/15/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://localhost:5001/jekyll/update/2017/02/15/welcome-to-jekyll.html</guid>
+        <link>http://localhost:5001/test/2017/02/15/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://localhost:5001/test/2017/02/15/welcome-to-jekyll.html</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>test</category>
         
       </item>
     
