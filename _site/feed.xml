@@ -5,9 +5,39 @@
     <description>总有刁民想害朕……但朕才是最强的一个!</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Feb 2017 01:07:50 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 01:07:50 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Feb 2017 21:17:56 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Feb 2017 21:17:56 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>vvvvh</title>
+        <description>
+&lt;p&gt;this condition will always be true.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 28 Feb 2017 12:43:00 +0800</pubDate>
+        <link>http://localhost:5001/rrr/2017/02/28/1g587.html</link>
+        <guid isPermaLink="true">http://localhost:5001/rrr/2017/02/28/1g587.html</guid>
+        
+        
+        <category>rrr</category>
+        
+      </item>
+    
+      <item>
+        <title>1587</title>
+        <description>
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    this condition will always be true.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 28 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/2017/02/28/1587.html</link>
+        <guid isPermaLink="true">http://localhost:5001/2017/02/28/1587.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>目录</title>
@@ -43,6 +73,14 @@
 &lt;ul class=&quot;arc-list&quot;&gt;
     
         &lt;li&gt;27/02/2017&lt;a href=&quot;/c/2017/02/27/testC.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;rrr&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;28/02/2017&lt;a href=&quot;/rrr/2017/02/28/1g587.html&quot;&gt;vvvvh&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
