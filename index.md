@@ -11,10 +11,11 @@ layout: default
 </ul>
 <hr/>
 {% endfor %} -->
+dddddddddddddddd
 
 
-{% assign ert="ggggg" %}
-  Hello {{ ert }}!
+{% assign foo="ggggg" %}
+  Hello {{ foo }}!
 <div class="animationButton">
 	{% for category in site.categories %}
 		<a href="#" class="{% circle 'red button','orange button' %}">{{ category | first }}</a>
