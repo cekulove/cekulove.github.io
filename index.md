@@ -13,7 +13,7 @@ layout: default
 {% endfor %} -->
 
 
-{% if ert="ggggg" %}
+{% assign ert="ggggg" %}
   Hello {{ ert }}!
 {% endif %}
 <div class="animationButton">
