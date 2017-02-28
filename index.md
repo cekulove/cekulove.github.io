@@ -15,7 +15,6 @@ layout: default
 
 {% assign ert="ggggg" %}
   Hello {{ ert }}!
-{% endif %}
 <div class="animationButton">
 	{% for category in site.categories %}
 		<a href="#" class="{% circle 'red button','orange button' %}">{{ category | first }}</a>
