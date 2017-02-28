@@ -1,1 +1,1 @@
-[Wevsite](https://cekulove.github.io/)
+[Website](https://cekulove.github.io/)
