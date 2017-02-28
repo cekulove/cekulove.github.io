@@ -18,17 +18,17 @@ layout: default
 <div class="animationButton">
 	{% for category in site.categories %}
 		{% for color in colors %}
-			<a href="#" class="{% cycle colors[0],colors[1],colors[2],colors[3],colors[4],colors[5] %}">{{ category | first }}</a>{% break %}
+			<a href="{{ category.last.last.url }}" class="{% cycle colors[0],colors[1],colors[2],colors[3],colors[4],colors[5] %}">{{ category | first }}</a>{% break %}
 		{% endfor %}
 	{% endfor %}
 </div>
 
 
-<!--<table>
+<table>
 	<tr>
 		<th>title</th>
 		<th>date</th>	
-		<th>tag</th>
+		<th>category</th>
 	</tr>
 	{% for category in site.categories %}
 		{% for post in category.last %}
@@ -39,4 +39,4 @@ layout: default
 			</tr>
 		{% endfor %}
 	{% endfor %}
-</table>-->
+</table>
