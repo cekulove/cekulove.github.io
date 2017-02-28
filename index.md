@@ -11,13 +11,7 @@ layout: default
 </ul>
 <hr/>
 {% endfor %} -->
-<p style="color:red;">dddddddddddddddd
-
-
-{% assign tobi = "Tobi" %}
-{% if tobi %}
-    this condition will always be true.
-{% endif %}
+<p style="color:red;">ddddddddddddddd
 </p>
 <div class="animationButton">
 	{% for category in site.categories %}
