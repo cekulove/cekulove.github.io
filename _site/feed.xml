@@ -5,14 +5,44 @@
     <description>总有刁民想害朕……但朕才是最强的一个!</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Feb 2017 23:18:17 +0800</pubDate>
-    <lastBuildDate>Tue, 28 Feb 2017 23:18:17 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Feb 2017 23:40:45 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Feb 2017 23:40:45 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
         <title>目录</title>
         <description>
-&lt;h2&gt;test&lt;/h2&gt;
+&lt;h2&gt;Asm&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;19/02/2017&lt;a href=&quot;/asm/2017/02/19/Asm-%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B1%87%E7%BC%96%E7%A8%8B%E5%BA%8F.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/asm/2017/01/01/Asm-%E7%9B%AE%E5%BD%95.html&quot;&gt;Asm目录&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;C&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;27/02/2017&lt;a href=&quot;/c/2017/02/27/C-%E7%AC%AC%E4%B8%80%E4%B8%AAC%E7%A8%8B%E5%BA%8F.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/c/2017/01/01/C-%E7%9B%AE%E5%BD%95.html&quot;&gt;C目录&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;JavaScript&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;17/02/2017&lt;a href=&quot;/javascript/2017/02/17/WebGL-webGL_Test.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/javascript/2017/01/01/JavaScript-%E7%9B%AE%E5%BD%95.html&quot;&gt;JavaScript目录&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;Test&lt;/h2&gt;
 &lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
@@ -20,31 +50,7 @@
     
         &lt;li&gt;15/02/2017&lt;a href=&quot;/test/2017/02/15/Test-Welcome_to_Jekyll.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/test/2017/01/01/Test-test%E7%9B%AE%E5%BD%95.html&quot;&gt;test目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;javascript&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;17/02/2017&lt;a href=&quot;/javascript/2017/02/17/WebGL-webGL_Test.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;asm&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;19/02/2017&lt;a href=&quot;/asm/2017/02/19/Asm-%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B1%87%E7%BC%96%E7%A8%8B%E5%BA%8F.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;C&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;27/02/2017&lt;a href=&quot;/c/2017/02/27/C-%E7%AC%AC%E4%B8%80%E4%B8%AAC%E7%A8%8B%E5%BA%8F.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/test/2017/01/01/Test-test%E7%9B%AE%E5%BD%95.html&quot;&gt;Test目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
@@ -55,7 +61,7 @@
         <guid isPermaLink="true">http://localhost:5001/test/2017/02/27/Test-%E7%9B%AE%E5%BD%95.html</guid>
         
         
-        <category>test</category>
+        <category>Test</category>
         
       </item>
     
@@ -104,7 +110,7 @@ end
         <guid isPermaLink="true">http://localhost:5001/asm/2017/02/19/Asm-%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B1%87%E7%BC%96%E7%A8%8B%E5%BA%8F.html</guid>
         
         
-        <category>asm</category>
+        <category>Asm</category>
         
       </item>
     
@@ -180,7 +186,7 @@ end
         <guid isPermaLink="true">http://localhost:5001/javascript/2017/02/17/WebGL-webGL_Test.html</guid>
         
         
-        <category>javascript</category>
+        <category>JavaScript</category>
         
       </item>
     
@@ -207,14 +213,14 @@ end
         <guid isPermaLink="true">http://localhost:5001/test/2017/02/15/Test-Welcome_to_Jekyll.html</guid>
         
         
-        <category>test</category>
+        <category>Test</category>
         
       </item>
     
       <item>
-        <title>test目录</title>
+        <title>Test目录</title>
         <description>
-&lt;h1 id=&quot;test&quot;&gt;test&lt;/h1&gt;
+&lt;h1 id=&quot;test&quot;&gt;Test&lt;/h1&gt;
 &lt;table&gt;
 	&lt;tr&gt;
 		&lt;th&gt;title&lt;/th&gt;
@@ -225,19 +231,19 @@ end
 				&lt;tr&gt;
 					&lt;td&gt;&lt;a href=&quot;/test/2017/02/27/Test-%E7%9B%AE%E5%BD%95.html&quot;&gt;目录&lt;/a&gt;&lt;/td&gt;
 					&lt;td&gt;2017-02-27&lt;/td&gt;
-					&lt;td&gt;test&lt;/td&gt;
+					&lt;td&gt;Test&lt;/td&gt;
 				&lt;/tr&gt;
 			
 				&lt;tr&gt;
 					&lt;td&gt;&lt;a href=&quot;/test/2017/02/15/Test-Welcome_to_Jekyll.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/td&gt;
 					&lt;td&gt;2017-02-15&lt;/td&gt;
-					&lt;td&gt;test&lt;/td&gt;
+					&lt;td&gt;Test&lt;/td&gt;
 				&lt;/tr&gt;
 			
 				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/test/2017/01/01/Test-test%E7%9B%AE%E5%BD%95.html&quot;&gt;test目录&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;a href=&quot;/test/2017/01/01/Test-test%E7%9B%AE%E5%BD%95.html&quot;&gt;Test目录&lt;/a&gt;&lt;/td&gt;
 					&lt;td&gt;2017-01-01&lt;/td&gt;
-					&lt;td&gt;test&lt;/td&gt;
+					&lt;td&gt;Test&lt;/td&gt;
 				&lt;/tr&gt;
 			
 &lt;/table&gt;
@@ -251,7 +257,121 @@ end
         <guid isPermaLink="true">http://localhost:5001/test/2017/01/01/Test-test%E7%9B%AE%E5%BD%95.html</guid>
         
         
-        <category>test</category>
+        <category>Test</category>
+        
+      </item>
+    
+      <item>
+        <title>JavaScript目录</title>
+        <description>
+&lt;h1 id=&quot;javascript&quot;&gt;JavaScript&lt;/h1&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;title&lt;/th&gt;
+		&lt;th&gt;date&lt;/th&gt;	
+		&lt;th&gt;category&lt;/th&gt;
+	&lt;/tr&gt;
+			
+				&lt;tr&gt;
+					&lt;td&gt;&lt;a href=&quot;/javascript/2017/02/17/WebGL-webGL_Test.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;2017-02-17&lt;/td&gt;
+					&lt;td&gt;JavaScript&lt;/td&gt;
+				&lt;/tr&gt;
+			
+				&lt;tr&gt;
+					&lt;td&gt;&lt;a href=&quot;/javascript/2017/01/01/JavaScript-%E7%9B%AE%E5%BD%95.html&quot;&gt;JavaScript目录&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;2017-01-01&lt;/td&gt;
+					&lt;td&gt;JavaScript&lt;/td&gt;
+				&lt;/tr&gt;
+			
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/javascript/2017/01/01/JavaScript-%E7%9B%AE%E5%BD%95.html</link>
+        <guid isPermaLink="true">http://localhost:5001/javascript/2017/01/01/JavaScript-%E7%9B%AE%E5%BD%95.html</guid>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>C目录</title>
+        <description>
+&lt;h1 id=&quot;c&quot;&gt;C&lt;/h1&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;title&lt;/th&gt;
+		&lt;th&gt;date&lt;/th&gt;	
+		&lt;th&gt;category&lt;/th&gt;
+	&lt;/tr&gt;
+			
+				&lt;tr&gt;
+					&lt;td&gt;&lt;a href=&quot;/c/2017/02/27/C-%E7%AC%AC%E4%B8%80%E4%B8%AAC%E7%A8%8B%E5%BA%8F.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;2017-02-27&lt;/td&gt;
+					&lt;td&gt;C&lt;/td&gt;
+				&lt;/tr&gt;
+			
+				&lt;tr&gt;
+					&lt;td&gt;&lt;a href=&quot;/c/2017/01/01/C-%E7%9B%AE%E5%BD%95.html&quot;&gt;C目录&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;2017-01-01&lt;/td&gt;
+					&lt;td&gt;C&lt;/td&gt;
+				&lt;/tr&gt;
+			
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/c/2017/01/01/C-%E7%9B%AE%E5%BD%95.html</link>
+        <guid isPermaLink="true">http://localhost:5001/c/2017/01/01/C-%E7%9B%AE%E5%BD%95.html</guid>
+        
+        
+        <category>C</category>
+        
+      </item>
+    
+      <item>
+        <title>Asm目录</title>
+        <description>
+&lt;h1 id=&quot;asm&quot;&gt;Asm&lt;/h1&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;title&lt;/th&gt;
+		&lt;th&gt;date&lt;/th&gt;	
+		&lt;th&gt;category&lt;/th&gt;
+	&lt;/tr&gt;
+			
+				&lt;tr&gt;
+					&lt;td&gt;&lt;a href=&quot;/asm/2017/02/19/Asm-%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%B1%87%E7%BC%96%E7%A8%8B%E5%BA%8F.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;2017-02-19&lt;/td&gt;
+					&lt;td&gt;Asm&lt;/td&gt;
+				&lt;/tr&gt;
+			
+				&lt;tr&gt;
+					&lt;td&gt;&lt;a href=&quot;/asm/2017/01/01/Asm-%E7%9B%AE%E5%BD%95.html&quot;&gt;Asm目录&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;2017-01-01&lt;/td&gt;
+					&lt;td&gt;Asm&lt;/td&gt;
+				&lt;/tr&gt;
+			
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/asm/2017/01/01/Asm-%E7%9B%AE%E5%BD%95.html</link>
+        <guid isPermaLink="true">http://localhost:5001/asm/2017/01/01/Asm-%E7%9B%AE%E5%BD%95.html</guid>
+        
+        
+        <category>Asm</category>
         
       </item>
     

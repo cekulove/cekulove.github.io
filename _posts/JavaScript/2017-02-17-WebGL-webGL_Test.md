@@ -2,7 +2,7 @@
 layout: default
 title: "webGL_Test"
 date:  2017-02-17 23:46:05 +0800
-categories: javascript
+categories: JavaScript
 ---
 <script>
 	document.write("<a style='color: #0f0;'>Screen: "+screen.width+" x "+screen.height+"</a>");
