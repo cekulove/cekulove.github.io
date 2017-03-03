@@ -5,9 +5,82 @@
     <description>It is never too late to learn.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Mar 2017 18:13:57 +0800</pubDate>
-    <lastBuildDate>Fri, 03 Mar 2017 18:13:57 +0800</lastBuildDate>
+    <pubDate>Fri, 03 Mar 2017 21:59:15 +0800</pubDate>
+    <lastBuildDate>Fri, 03 Mar 2017 21:59:15 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>在makefile中有四种方式对变量赋值</title>
+        <description>&lt;hr /&gt;
+
+&lt;h3 id=&quot;1简单展开&quot;&gt;1.简单展开&lt;/h3&gt;
+&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;MAKE_DEPEND&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$(CC)&lt;/span&gt; -M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;这种方式叫做“简单展开”，在读到makefile中的这一行时等号右边就立即被展开，等号右边引用的所有变量（如例子中的CC）也会被立即展开。其行为与一般编程和脚本语言相同。&lt;/li&gt;
+  &lt;li&gt;当等号右边引用的变量（如例子中的CC）还没有被定义时，它被展开成空（nothing）而不是空格之类。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2递归展开&quot;&gt;2.递归展开&lt;/h3&gt;
+&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;MAKE_DEPEND&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$(CC)&lt;/span&gt; -M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;这种方式叫做“递归展开”，直到该变量被使用时等号右边的内容才会被展开，其实叫做“迟滞展开”更合适。神奇的是，这种展开方式可以不按顺序定义变量。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt; &lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 03 Mar 2017 21:42:00 +0800</pubDate>
+        <link>http://localhost:5001/makefile/2017/03/03/Makedile-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makedile-01.html</guid>
+        
+        
+        <category>Makefile</category>
+        
+      </item>
+    
+      <item>
+        <title>Makefile目录</title>
+        <description>
+&lt;h1 id=&quot;makefile&quot;&gt;Makefile&lt;/h1&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;title&lt;/th&gt;
+		&lt;th&gt;date&lt;/th&gt;	
+		&lt;th&gt;category&lt;/th&gt;
+	&lt;/tr&gt;
+			
+				&lt;tr&gt;
+					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/03/Makedile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;2017-03-03&lt;/td&gt;
+					&lt;td&gt;Makefile&lt;/td&gt;
+				&lt;/tr&gt;
+			
+				&lt;tr&gt;
+					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/03/Makedile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;2017-03-03&lt;/td&gt;
+					&lt;td&gt;Makefile&lt;/td&gt;
+				&lt;/tr&gt;
+			
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Mar 2017 21:36:00 +0800</pubDate>
+        <link>http://localhost:5001/makefile/2017/03/03/Makedile-00.html</link>
+        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makedile-00.html</guid>
+        
+        
+        <category>Makefile</category>
+        
+      </item>
     
       <item>
         <title>Dos目录</title>
@@ -92,6 +165,16 @@
 &lt;ul class=&quot;arc-list&quot;&gt;
     
         &lt;li&gt;03/03/2017&lt;a href=&quot;/dos/2017/03/03/Dos-00.html&quot;&gt;Dos目录&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;Makefile&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makedile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makedile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
@@ -338,82 +421,6 @@ end
         
         
         <category>JavaScript</category>
-        
-      </item>
-    
-      <item>
-        <title>C目录</title>
-        <description>
-&lt;h1 id=&quot;c&quot;&gt;C&lt;/h1&gt;
-&lt;table&gt;
-	&lt;tr&gt;
-		&lt;th&gt;title&lt;/th&gt;
-		&lt;th&gt;date&lt;/th&gt;	
-		&lt;th&gt;category&lt;/th&gt;
-	&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/c/2017/01/01/C-00.html&quot;&gt;C目录&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-01-01&lt;/td&gt;
-					&lt;td&gt;C&lt;/td&gt;
-				&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/c/2017/02/27/C-01.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-02-27&lt;/td&gt;
-					&lt;td&gt;C&lt;/td&gt;
-				&lt;/tr&gt;
-			
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:5001/c/2017/01/01/C-00.html</link>
-        <guid isPermaLink="true">http://localhost:5001/c/2017/01/01/C-00.html</guid>
-        
-        
-        <category>C</category>
-        
-      </item>
-    
-      <item>
-        <title>Asm目录</title>
-        <description>
-&lt;h1 id=&quot;asm&quot;&gt;Asm&lt;/h1&gt;
-&lt;table&gt;
-	&lt;tr&gt;
-		&lt;th&gt;title&lt;/th&gt;
-		&lt;th&gt;date&lt;/th&gt;	
-		&lt;th&gt;category&lt;/th&gt;
-	&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/asm/2017/01/01/Asm-00.html&quot;&gt;Asm目录&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-01-01&lt;/td&gt;
-					&lt;td&gt;Asm&lt;/td&gt;
-				&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/asm/2017/02/19/Asm-01.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-02-19&lt;/td&gt;
-					&lt;td&gt;Asm&lt;/td&gt;
-				&lt;/tr&gt;
-			
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:5001/asm/2017/01/01/Asm-00.html</link>
-        <guid isPermaLink="true">http://localhost:5001/asm/2017/01/01/Asm-00.html</guid>
-        
-        
-        <category>Asm</category>
         
       </item>
     
