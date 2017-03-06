@@ -5,9 +5,43 @@
     <description>It is never too late to learn.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Mar 2017 21:19:00 +0800</pubDate>
-    <lastBuildDate>Mon, 06 Mar 2017 21:19:00 +0800</lastBuildDate>
+    <pubDate>Mon, 06 Mar 2017 23:38:38 +0800</pubDate>
+    <lastBuildDate>Mon, 06 Mar 2017 23:38:38 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Hello World !</title>
+        <description>&lt;p&gt;makefile文件中包含了一组规则.&lt;br /&gt;
+每一项规则可分成三个部分：工作目标（target）、必要条件（prerequisite）、以及命令（commands）.&lt;/p&gt;
+&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;prereq1 prereq2 ...&lt;/span&gt;
+	commands
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;makefile中第一项规则，会被作为默认规则使用.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;一个简单的事例&quot;&gt;一个简单的事例：&lt;/h2&gt;
+&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello.c&lt;/span&gt;
+	gcc hello.c -o hello
+
+&lt;span class=&quot;c&quot;&gt;# 执行make程序:	$ make  
+# make程序会读取makefile文件
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h1 id=&quot;back&quot;&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/h1&gt;
+</description>
+        <pubDate>Mon, 06 Mar 2017 07:07:00 +0800</pubDate>
+        <link>http://localhost:5001/makefile/2017/03/06/Makefile-02.html</link>
+        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/06/Makefile-02.html</guid>
+        
+        
+        <category>Makefile</category>
+        
+      </item>
     
       <item>
         <title>在makefile中有四种方式对变量赋值</title>
@@ -28,7 +62,16 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;这种方式叫做“递归展开”，直到该变量被使用时等号右边的内容才会被展开，其实叫做“迟滞展开”更合适。神奇的是，这种展开方式可以不按顺序定义变量。&lt;/p&gt;
+  &lt;p&gt;这种方式叫做“递归展开”，直到该变量被使用时等号右边的内容才会被展开，其实叫做“迟滞展开”更合适。神奇的是，这种展开方式可以不按顺序定义变量。&lt;br /&gt;
+比如:&lt;/p&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MAKE_DEPEND = $(CC) -M
+...
+# Some time later
+CC = gcc
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;p&gt;只要在此之前没有引用过MAKE_DEPEND就没问题。&lt;br /&gt;
+另外，不止是“迟滞展开”，事实上每次使用该变量，等号右边的内容都会被重新展开。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -36,8 +79,8 @@
 
 </description>
         <pubDate>Fri, 03 Mar 2017 21:42:00 +0800</pubDate>
-        <link>http://localhost:5001/makefile/2017/03/03/Makedile-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makedile-01.html</guid>
+        <link>http://localhost:5001/makefile/2017/03/03/Makefile-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makefile-01.html</guid>
         
         
         <category>Makefile</category>
@@ -56,14 +99,20 @@
 	&lt;/tr&gt;
 			
 				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/03/Makedile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/03/Makefile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/td&gt;
 					&lt;td&gt;2017-03-03&lt;/td&gt;
 					&lt;td&gt;Makefile&lt;/td&gt;
 				&lt;/tr&gt;
 			
 				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/03/Makedile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/03/Makefile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/td&gt;
 					&lt;td&gt;2017-03-03&lt;/td&gt;
+					&lt;td&gt;Makefile&lt;/td&gt;
+				&lt;/tr&gt;
+			
+				&lt;tr&gt;
+					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/06/Makefile-02.html&quot;&gt;Hello World !&lt;/a&gt;&lt;/td&gt;
+					&lt;td&gt;2017-03-06&lt;/td&gt;
 					&lt;td&gt;Makefile&lt;/td&gt;
 				&lt;/tr&gt;
 			
@@ -74,8 +123,8 @@
 &lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 03 Mar 2017 21:36:00 +0800</pubDate>
-        <link>http://localhost:5001/makefile/2017/03/03/Makedile-00.html</link>
-        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makedile-00.html</guid>
+        <link>http://localhost:5001/makefile/2017/03/03/Makefile-00.html</link>
+        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makefile-00.html</guid>
         
         
         <category>Makefile</category>
@@ -169,12 +218,14 @@
 &lt;/ul&gt;
 
 &lt;h2&gt;Makefile&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makedile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;06/03/2017&lt;a href=&quot;/makefile/2017/03/06/Makefile-02.html&quot;&gt;Hello World !&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makedile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makefile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makefile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
@@ -383,44 +434,6 @@ end
         
         
         <category>Test</category>
-        
-      </item>
-    
-      <item>
-        <title>JavaScript目录</title>
-        <description>
-&lt;h1 id=&quot;javascript&quot;&gt;JavaScript&lt;/h1&gt;
-&lt;table&gt;
-	&lt;tr&gt;
-		&lt;th&gt;title&lt;/th&gt;
-		&lt;th&gt;date&lt;/th&gt;	
-		&lt;th&gt;category&lt;/th&gt;
-	&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/javascript/2017/01/01/JavaScript-00.html&quot;&gt;JavaScript目录&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-01-01&lt;/td&gt;
-					&lt;td&gt;JavaScript&lt;/td&gt;
-				&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/javascript/2017/02/17/JavaScript-01.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-02-17&lt;/td&gt;
-					&lt;td&gt;JavaScript&lt;/td&gt;
-				&lt;/tr&gt;
-			
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:5001/javascript/2017/01/01/JavaScript-00.html</link>
-        <guid isPermaLink="true">http://localhost:5001/javascript/2017/01/01/JavaScript-00.html</guid>
-        
-        
-        <category>JavaScript</category>
         
       </item>
     
