@@ -5,9 +5,22 @@
     <description>It is never too late to learn.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 07 Mar 2017 22:42:25 +0800</pubDate>
-    <lastBuildDate>Tue, 07 Mar 2017 22:42:25 +0800</lastBuildDate>
+    <pubDate>Wed, 08 Mar 2017 01:07:43 +0800</pubDate>
+    <lastBuildDate>Wed, 08 Mar 2017 01:07:43 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>常用DOS命令</title>
+        <description>&lt;h1 id=&quot;helloworld&quot;&gt;helloworld&lt;/h1&gt;
+</description>
+        <pubDate>Wed, 08 Mar 2017 00:49:00 +0800</pubDate>
+        <link>http://localhost:5001/dos/2017/03/08/Dos-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/dos/2017/03/08/Dos-01.html</guid>
+        
+        
+        <category>Dos</category>
+        
+      </item>
     
       <item>
         <title>Hello World !</title>
@@ -34,8 +47,6 @@
   &lt;li&gt;执行make程序:	$ make&lt;/li&gt;
   &lt;li&gt;make程序会读取makefile文件&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h1 id=&quot;back&quot;&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/h1&gt;
 </description>
         <pubDate>Mon, 06 Mar 2017 07:07:00 +0800</pubDate>
         <link>http://localhost:5001/makefile/2017/03/06/Makefile-02.html</link>
@@ -81,9 +92,6 @@
 另外，不止是“迟滞展开”，事实上每次使用该变量，等号右边的内容都会被重新展开。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;back&quot;&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt; &lt;/h1&gt;
-
 </description>
         <pubDate>Fri, 03 Mar 2017 21:42:00 +0800</pubDate>
         <link>http://localhost:5001/makefile/2017/03/03/Makefile-01.html</link>
@@ -95,83 +103,6 @@
         
         
         <category>Makefile</category>
-        
-      </item>
-    
-      <item>
-        <title>Makefile目录</title>
-        <description>
-&lt;h1 id=&quot;makefile&quot;&gt;Makefile&lt;/h1&gt;
-&lt;table&gt;
-	&lt;tr&gt;
-		&lt;th&gt;title&lt;/th&gt;
-		&lt;th&gt;date&lt;/th&gt;	
-		&lt;th&gt;category&lt;/th&gt;
-	&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/03/Makefile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-03-03&lt;/td&gt;
-					&lt;td&gt;Makefile&lt;/td&gt;
-				&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/03/Makefile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-03-03&lt;/td&gt;
-					&lt;td&gt;Makefile&lt;/td&gt;
-				&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/makefile/2017/03/06/Makefile-02.html&quot;&gt;Hello World !&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-03-06&lt;/td&gt;
-					&lt;td&gt;Makefile&lt;/td&gt;
-				&lt;/tr&gt;
-			
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 03 Mar 2017 21:36:00 +0800</pubDate>
-        <link>http://localhost:5001/makefile/2017/03/03/Makefile-00.html</link>
-        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makefile-00.html</guid>
-        
-        
-        <category>Makefile</category>
-        
-      </item>
-    
-      <item>
-        <title>Dos目录</title>
-        <description>
-&lt;h1 id=&quot;dos&quot;&gt;Dos&lt;/h1&gt;
-&lt;table&gt;
-	&lt;tr&gt;
-		&lt;th&gt;title&lt;/th&gt;
-		&lt;th&gt;date&lt;/th&gt;	
-		&lt;th&gt;category&lt;/th&gt;
-	&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/dos/2017/03/03/Dos-00.html&quot;&gt;Dos目录&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-03-03&lt;/td&gt;
-					&lt;td&gt;Dos&lt;/td&gt;
-				&lt;/tr&gt;
-			
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 03 Mar 2017 18:11:00 +0800</pubDate>
-        <link>http://localhost:5001/dos/2017/03/03/Dos-00.html</link>
-        <guid isPermaLink="true">http://localhost:5001/dos/2017/03/03/Dos-00.html</guid>
-        
-        
-        <category>Dos</category>
         
       </item>
     
@@ -188,59 +119,52 @@
     
 &lt;/ul&gt;
 
-&lt;h2&gt;C&lt;/h2&gt;
+&lt;h2&gt;Dos&lt;/h2&gt;
 &lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;27/02/2017&lt;a href=&quot;/c/2017/02/27/C-01.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;08/03/2017&lt;a href=&quot;/dos/2017/03/08/Dos-01.html&quot;&gt;常用DOS命令&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/c/2017/01/01/C-00.html&quot;&gt;C目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;JavaScript&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;17/02/2017&lt;a href=&quot;/javascript/2017/02/17/JavaScript-01.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/javascript/2017/01/01/JavaScript-00.html&quot;&gt;JavaScript目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/dos/2017/01/01/Dos-00.html&quot;&gt;Dos目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
 &lt;h2&gt;Test&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
         &lt;li&gt;27/02/2017&lt;a href=&quot;/test/2017/02/27/Test-02.html&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
     
         &lt;li&gt;15/02/2017&lt;a href=&quot;/test/2017/02/15/Test-01.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/test/2017/01/01/Test-00.html&quot;&gt;Test目录&lt;/a&gt;&lt;/li&gt;
-    
 &lt;/ul&gt;
 
-&lt;h2&gt;Dos&lt;/h2&gt;
+&lt;h2&gt;JavaScript&lt;/h2&gt;
 &lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;03/03/2017&lt;a href=&quot;/dos/2017/03/03/Dos-00.html&quot;&gt;Dos目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;17/02/2017&lt;a href=&quot;/javascript/2017/02/17/JavaScript-01.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;C&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;27/02/2017&lt;a href=&quot;/c/2017/02/27/C-01.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
 &lt;h2&gt;Makefile&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
         &lt;li&gt;06/03/2017&lt;a href=&quot;/makefile/2017/03/06/Makefile-02.html&quot;&gt;Hello World !&lt;/a&gt;&lt;/li&gt;
     
         &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makefile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makefile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/li&gt;
-    
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Feb 2017 17:08:55 +0800</pubDate>
         <link>http://localhost:5001/test/2017/02/27/Test-02.html</link>
@@ -262,7 +186,6 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt; &lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Feb 2017 12:11:05 +0800</pubDate>
         <link>http://localhost:5001/c/2017/02/27/C-01.html</link>
@@ -292,7 +215,6 @@ codesg segment
 codesg ends
 end
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 19 Feb 2017 19:33:05 +0800</pubDate>
         <link>http://localhost:5001/asm/2017/02/19/Asm-01.html</link>
@@ -369,8 +291,6 @@ end
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Feb 2017 23:46:05 +0800</pubDate>
         <link>http://localhost:5001/javascript/2017/02/17/JavaScript-01.html</link>
@@ -399,7 +319,6 @@ end
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 15 Feb 2017 21:09:05 +0800</pubDate>
         <link>http://localhost:5001/test/2017/02/15/Test-01.html</link>
@@ -411,8 +330,46 @@ end
       </item>
     
       <item>
-        <title>Test目录</title>
+        <title>Dos目录</title>
         <description>
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;title&lt;/th&gt;
+		&lt;th&gt;date&lt;/th&gt;	
+		&lt;th&gt;category&lt;/th&gt;
+	&lt;/tr&gt;
+			
+				
+			
+				 
+					&lt;tr&gt;
+						&lt;td&gt;&lt;a href=&quot;/dos/2017/03/08/Dos-01.html&quot;&gt;常用DOS命令&lt;/a&gt;&lt;/td&gt;
+						&lt;td&gt;2017-03-08&lt;/td&gt;
+						&lt;td&gt;Dos&lt;/td&gt;
+					&lt;/tr&gt;
+				
+			
+&lt;/table&gt;
+
+</description>
+        <pubDate>Sun, 01 Jan 2017 18:11:00 +0800</pubDate>
+        <link>http://localhost:5001/dos/2017/01/01/Dos-00.html</link>
+        <guid isPermaLink="true">http://localhost:5001/dos/2017/01/01/Dos-00.html</guid>
+        
+        
+        <category>Dos</category>
+        
+      </item>
+    
+      <item>
+        <title>Test 00</title>
+        <description>&lt;p&gt;﻿—
+layout: post
+title: Test目录
+date: 2017-01-01 09:00:00 +0800
+categories: Test
+—&lt;/p&gt;
+
 &lt;h1 id=&quot;test&quot;&gt;Test&lt;/h1&gt;
 &lt;table&gt;
 	&lt;tr&gt;
@@ -421,36 +378,29 @@ end
 		&lt;th&gt;category&lt;/th&gt;
 	&lt;/tr&gt;
 			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/test/2017/01/01/Test-00.html&quot;&gt;Test目录&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-01-01&lt;/td&gt;
-					&lt;td&gt;Test&lt;/td&gt;
-				&lt;/tr&gt;
+				
+					&lt;tr&gt;
+						&lt;td&gt;&lt;a href=&quot;/test/2017/02/15/Test-01.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/td&gt;
+						&lt;td&gt;2017-02-15&lt;/td&gt;
+						&lt;td&gt;Test&lt;/td&gt;
+					&lt;/tr&gt;
+				
 			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/test/2017/02/15/Test-01.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-02-15&lt;/td&gt;
-					&lt;td&gt;Test&lt;/td&gt;
-				&lt;/tr&gt;
-			
-				&lt;tr&gt;
-					&lt;td&gt;&lt;a href=&quot;/test/2017/02/27/Test-02.html&quot;&gt;目录&lt;/a&gt;&lt;/td&gt;
-					&lt;td&gt;2017-02-27&lt;/td&gt;
-					&lt;td&gt;Test&lt;/td&gt;
-				&lt;/tr&gt;
+				
+					&lt;tr&gt;
+						&lt;td&gt;&lt;a href=&quot;/test/2017/02/27/Test-02.html&quot;&gt;目录&lt;/a&gt;&lt;/td&gt;
+						&lt;td&gt;2017-02-27&lt;/td&gt;
+						&lt;td&gt;Test&lt;/td&gt;
+					&lt;/tr&gt;
+				
 			
 &lt;/table&gt;
 
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;/&quot;&gt;back&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:5001/test/2017/01/01/Test-00.html</link>
-        <guid isPermaLink="true">http://localhost:5001/test/2017/01/01/Test-00.html</guid>
+        <link>http://localhost:5001/2017/01/01/Test-00.html</link>
+        <guid isPermaLink="true">http://localhost:5001/2017/01/01/Test-00.html</guid>
         
-        
-        <category>Test</category>
         
       </item>
     
