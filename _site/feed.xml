@@ -5,33 +5,29 @@
     <description>It is never too late to learn.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Mar 2017 18:03:47 +0800</pubDate>
-    <lastBuildDate>Thu, 09 Mar 2017 18:03:47 +0800</lastBuildDate>
+    <pubDate>Thu, 09 Mar 2017 19:42:32 +0800</pubDate>
+    <lastBuildDate>Thu, 09 Mar 2017 19:42:32 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
         <title>指针和const</title>
         <description>&lt;p&gt;首先，声明一个指向常量的指针p&lt;/p&gt;
 
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;29&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//invalid
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//invalid
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;29&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;可以通过age变量来修改age的值，但*p的值为const，不允许修改&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//invalid
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;invalid&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//invalid
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//valid
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;可以通过age变量来修改age的值,但*p的值为const,不允许修改&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;//invalid
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;valid&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
-        <pubDate>Thu, 09 Mar 2017 02:11:05 +0800</pubDate>
-        <link>http://localhost:5001/c/2017/03/09/C-03.html</link>
-        <guid isPermaLink="true">http://localhost:5001/c/2017/03/09/C-03.html</guid>
+        <pubDate>Thu, 09 Mar 2017 18:11:05 +0800</pubDate>
+        <link>http://localhost:5001/c/2017/03/09/C-02.html</link>
+        <guid isPermaLink="true">http://localhost:5001/c/2017/03/09/C-02.html</guid>
         
         <category>cpp</category>
         
@@ -45,7 +41,7 @@
         <description>
 &lt;h1 id=&quot;abc-gg-&quot;&gt;abc gg !&lt;/h1&gt;
 </description>
-        <pubDate>Wed, 08 Mar 2017 00:49:00 +0800</pubDate>
+        <pubDate>Wed, 08 Mar 2017 16:49:00 +0800</pubDate>
         <link>http://localhost:5001/dos/2017/03/08/Dos-01.html</link>
         <guid isPermaLink="true">http://localhost:5001/dos/2017/03/08/Dos-01.html</guid>
         
@@ -59,10 +55,10 @@
         <description>&lt;h2 id=&quot;如何编写一个简单的makefile&quot;&gt;如何编写一个简单的makefile&lt;/h2&gt;
 &lt;p&gt;makefile文件中包含了一组规则.&lt;br /&gt;
 每一项规则可分成三个部分：工作目标（target）、必要条件（prerequisite）、以及命令（commands）.&lt;/p&gt;
-&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;prerequisites&lt;/span&gt;
-	commands
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;target: prerequisites
+	commands&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;ul&gt;
   &lt;li&gt;makefile中第一项规则，会被作为默认规则使用.&lt;/li&gt;
 &lt;/ul&gt;
@@ -71,22 +67,20 @@
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;一个简单的事例&quot;&gt;一个简单的事例：&lt;/h4&gt;
-&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hello.c&lt;/span&gt;
-	gcc hello.c -o hello
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;hello: hello.c
+	gcc hello.c -o hello&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;ul&gt;
   &lt;li&gt;执行make程序:	$ make&lt;/li&gt;
   &lt;li&gt;make程序会读取makefile文件&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 06 Mar 2017 07:07:00 +0800</pubDate>
+        <pubDate>Mon, 06 Mar 2017 23:07:00 +0800</pubDate>
         <link>http://localhost:5001/makefile/2017/03/06/Makefile-02.html</link>
         <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/06/Makefile-02.html</guid>
         
-        <category>makefile</category>
-        
-        <category>bash</category>
+        <category>cmake</category>
         
         
         <category>Makefile</category>
@@ -96,9 +90,9 @@
       <item>
         <title>在makefile中有四种方式对变量赋值</title>
         <description>&lt;h2 id=&quot;1简单展开&quot;&gt;1.简单展开&lt;/h2&gt;
-&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;MAKE_DEPEND&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$(CC)&lt;/span&gt; -M
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;MAKE_DEPEND := $&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CC&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; -M&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;这种方式叫做“简单展开”，在读到makefile中的这一行时等号右边就立即被展开，等号右边引用的所有变量（如例子中的CC）也会被立即展开。其行为与一般编程和脚本语言相同。&lt;br /&gt;
 当等号右边引用的变量（如例子中的CC）还没有被定义时，它被展开成空（nothing）而不是空格之类。&lt;/p&gt;
@@ -108,30 +102,30 @@
 &lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2递归展开&quot;&gt;2.递归展开&lt;/h2&gt;
-&lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;MAKE_DEPEND&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$(CC)&lt;/span&gt; -M
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;MAKE_DEPEND = $&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CC&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; -M&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;blockquote&gt;
   &lt;p&gt;这种方式叫做“递归展开”，直到该变量被使用时等号右边的内容才会被展开，其实叫做“迟滞展开”更合适。神奇的是，这种展开方式可以不按顺序定义变量。&lt;br /&gt;
 比如:&lt;/p&gt;
-  &lt;div class=&quot;language-makefile highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;MAKE_DEPEND&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$(CC)&lt;/span&gt; -M
-&lt;span class=&quot;c&quot;&gt;# ...
-# Some time later
-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;CC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; gcc
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;MAKE_DEPEND = $&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CC&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; -M
+&lt;span class=&quot;c1&quot;&gt;# ...&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Some time later&lt;/span&gt;
+CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
   &lt;p&gt;只要在此之前没有引用过MAKE_DEPEND就没问题。&lt;br /&gt;
 另外，不止是“迟滞展开”，事实上每次使用该变量，等号右边的内容都会被重新展开。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 </description>
-        <pubDate>Fri, 03 Mar 2017 21:42:00 +0800</pubDate>
-        <link>http://localhost:5001/makefile/2017/03/03/Makefile-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makefile-01.html</guid>
+        <pubDate>Sat, 04 Mar 2017 13:42:00 +0800</pubDate>
+        <link>http://localhost:5001/makefile/2017/03/04/Makefile-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/04/Makefile-01.html</guid>
         
-        <category>makefile</category>
-        
-        <category>bash</category>
+        <category>cmake</category>
         
         
         <category>Makefile</category>
@@ -145,21 +139,9 @@
 &lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;19/02/2017&lt;a href=&quot;/asm/2017/02/19/Asm-01.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;20/02/2017&lt;a href=&quot;/asm/2017/02/20/Asm-01.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/li&gt;
     
         &lt;li&gt;01/01/2017&lt;a href=&quot;/asm/2017/01/01/Asm-00.html&quot;&gt;Asm目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;C&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;09/03/2017&lt;a href=&quot;/c/2017/03/09/C-03.html&quot;&gt;指针和const&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;27/02/2017&lt;a href=&quot;/c/2017/02/27/C-01.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/c/2017/01/01/C-00.html&quot;&gt;C目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
@@ -167,7 +149,7 @@
 &lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;17/02/2017&lt;a href=&quot;/javascript/2017/02/17/JavaScript-01.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;18/02/2017&lt;a href=&quot;/javascript/2017/02/18/JavaScript-01.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
     
         &lt;li&gt;01/01/2017&lt;a href=&quot;/javascript/2017/01/01/JavaScript-00.html&quot;&gt;JavaScript目录&lt;/a&gt;&lt;/li&gt;
     
@@ -179,9 +161,21 @@
     
         &lt;li&gt;06/03/2017&lt;a href=&quot;/makefile/2017/03/06/Makefile-02.html&quot;&gt;Hello World !&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makefile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;04/03/2017&lt;a href=&quot;/makefile/2017/03/04/Makefile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/li&gt;
     
         &lt;li&gt;01/01/2017&lt;a href=&quot;/makefile/2017/01/01/Makefile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;C&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;09/03/2017&lt;a href=&quot;/c/2017/03/09/C-02.html&quot;&gt;指针和const&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;28/02/2017&lt;a href=&quot;/c/2017/02/28/C-01.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/c/2017/01/01/C-00.html&quot;&gt;C目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
@@ -189,11 +183,11 @@
 &lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;27/02/2017&lt;a href=&quot;/test/2017/02/27/Test-02.html&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;28/02/2017&lt;a href=&quot;/test/2017/02/28/Test-02.html&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;15/02/2017&lt;a href=&quot;/test/2017/02/15/Test-01.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;16/02/2017&lt;a href=&quot;/test/2017/02/16/Test-01.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/test/2017/01/01/Test-00.html&quot;&gt;Test目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;02/01/2017&lt;a href=&quot;/test/2017/01/02/Test-00.html&quot;&gt;Test目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
@@ -203,14 +197,22 @@
     
         &lt;li&gt;08/03/2017&lt;a href=&quot;/dos/2017/03/08/Dos-01.html&quot;&gt;常用DOS命令&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/dos/2017/01/01/Dos-00.html&quot;&gt;Dos目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;02/01/2017&lt;a href=&quot;/dos/2017/01/02/Dos-00.html&quot;&gt;Dos目录&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;WebGL&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;02/01/2017&lt;a href=&quot;/webgl/2017/01/02/WebGL-00.html&quot;&gt;WebGL目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Mon, 27 Feb 2017 17:08:55 +0800</pubDate>
-        <link>http://localhost:5001/test/2017/02/27/Test-02.html</link>
-        <guid isPermaLink="true">http://localhost:5001/test/2017/02/27/Test-02.html</guid>
+        <pubDate>Tue, 28 Feb 2017 09:08:55 +0800</pubDate>
+        <link>http://localhost:5001/test/2017/02/28/Test-02.html</link>
+        <guid isPermaLink="true">http://localhost:5001/test/2017/02/28/Test-02.html</guid>
         
         
         <category>Test</category>
@@ -219,19 +221,19 @@
     
       <item>
         <title>第一个C程序</title>
-        <description>&lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;stdio.h&amp;gt;
+        <description>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;stdio.h&amp;gt;
 &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World !&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;getchar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
-        <pubDate>Mon, 27 Feb 2017 12:11:05 +0800</pubDate>
-        <link>http://localhost:5001/c/2017/02/27/C-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/c/2017/02/27/C-01.html</guid>
+        <pubDate>Tue, 28 Feb 2017 04:11:05 +0800</pubDate>
+        <link>http://localhost:5001/c/2017/02/28/C-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/c/2017/02/28/C-01.html</guid>
         
         <category>cpp</category>
         
@@ -244,7 +246,7 @@
         <title>第一个汇编程序</title>
         <description>&lt;h1 id=&quot;第一个汇编程序&quot;&gt;第一个汇编程序&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-x86asm&quot;&gt;assume cs:codesg
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-x86asm&quot; data-lang=&quot;x86asm&quot;&gt;assume cs:codesg
 codesg segment
 	mov ax,0111H
 	mov bx,0233H
@@ -255,12 +257,12 @@ codesg segment
 	int 21H
 
 codesg ends
-end
-&lt;/code&gt;&lt;/pre&gt;
+end&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
-        <pubDate>Sun, 19 Feb 2017 19:33:05 +0800</pubDate>
-        <link>http://localhost:5001/asm/2017/02/19/Asm-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/asm/2017/02/19/Asm-01.html</guid>
+        <pubDate>Mon, 20 Feb 2017 11:33:05 +0800</pubDate>
+        <link>http://localhost:5001/asm/2017/02/20/Asm-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/asm/2017/02/20/Asm-01.html</guid>
         
         <category>x86asm</category>
         
@@ -277,7 +279,7 @@ end
 
 &lt;h2&gt;webGL_Test&lt;/h2&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;canvas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;canvas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;900px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;900px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1000&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -330,13 +332,12 @@ end
     &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vertexAttribPointer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a_Position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FLOAT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enableVertexAttribArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a_Position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
-        <pubDate>Fri, 17 Feb 2017 23:46:05 +0800</pubDate>
-        <link>http://localhost:5001/javascript/2017/02/17/JavaScript-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/javascript/2017/02/17/JavaScript-01.html</guid>
+        <pubDate>Sat, 18 Feb 2017 15:46:05 +0800</pubDate>
+        <link>http://localhost:5001/javascript/2017/02/18/JavaScript-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/javascript/2017/02/18/JavaScript-01.html</guid>
         
         <category>javascript</category>
         
@@ -362,9 +363,9 @@ end
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 15 Feb 2017 21:09:05 +0800</pubDate>
-        <link>http://localhost:5001/test/2017/02/15/Test-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/test/2017/02/15/Test-01.html</guid>
+        <pubDate>Thu, 16 Feb 2017 13:09:05 +0800</pubDate>
+        <link>http://localhost:5001/test/2017/02/16/Test-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/test/2017/02/16/Test-01.html</guid>
         
         
         <category>Test</category>
@@ -372,8 +373,9 @@ end
       </item>
     
       <item>
-        <title>Dos目录</title>
+        <title>WebGL目录</title>
         <description>
+&lt;h1 id=&quot;webgl&quot;&gt;WebGL&lt;/h1&gt;
 &lt;table&gt;
 	&lt;tr&gt;
 		&lt;th&gt;title&lt;/th&gt;
@@ -383,23 +385,15 @@ end
 			
 				
 			
-				 
-					&lt;tr&gt;
-						&lt;td&gt;&lt;a href=&quot;/dos/2017/03/08/Dos-01.html&quot;&gt;常用DOS命令&lt;/a&gt;&lt;/td&gt;
-						&lt;td&gt;2017-03-08&lt;/td&gt;
-						&lt;td&gt;Dos&lt;/td&gt;
-					&lt;/tr&gt;
-				
-			
 &lt;/table&gt;
 
 </description>
-        <pubDate>Sun, 01 Jan 2017 18:11:00 +0800</pubDate>
-        <link>http://localhost:5001/dos/2017/01/01/Dos-00.html</link>
-        <guid isPermaLink="true">http://localhost:5001/dos/2017/01/01/Dos-00.html</guid>
+        <pubDate>Mon, 02 Jan 2017 11:36:00 +0800</pubDate>
+        <link>http://localhost:5001/webgl/2017/01/02/WebGL-00.html</link>
+        <guid isPermaLink="true">http://localhost:5001/webgl/2017/01/02/WebGL-00.html</guid>
         
         
-        <category>Dos</category>
+        <category>WebGL</category>
         
       </item>
     
