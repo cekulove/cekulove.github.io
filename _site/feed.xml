@@ -5,9 +5,126 @@
     <description>It is never too late to learn.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Mar 2017 19:54:01 +0800</pubDate>
-    <lastBuildDate>Thu, 09 Mar 2017 19:54:01 +0800</lastBuildDate>
+    <pubDate>Thu, 09 Mar 2017 22:32:40 +0800</pubDate>
+    <lastBuildDate>Thu, 09 Mar 2017 22:32:40 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>WebGL_Test_1</title>
+        <description>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;canvas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;900px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;900px&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1000&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1000&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;border&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1px solid black&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;webgl&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;view&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;VSHADER_SOURCE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'	void main(){					'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'		gl_Position = vec4(0.0,0.0,0.0,1.0);	'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'		gl_PointSize = 10.0;			'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'	}						'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;FSHADER_SOURCE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'	void main(){					'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'		gl_FragColor = vec4(1.0,0.0,0.0,1.0);	'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'	}						'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vertexShader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;VERTEX_SHADER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shaderSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vertexShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;VSHADER_SOURCE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compileShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vertexShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fragmentShader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FRAGMENT_SHADER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;shaderSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fragmentShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;FSHADER_SOURCE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;compileShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fragmentShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;program&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createProgram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attachShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vertexShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attachShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fragmentShader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;linkProgram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getProgramParameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LINK_STATUS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)){&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;info&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getProgramInfoLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Could not compile WebGL program.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;useProgram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clearColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;COLOR_BUFFER_BIT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;drawArrays&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PONTS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;deleteProgram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;program&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;div id=&quot;view&quot; style=&quot;text-align: center;&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+	draw();
+	function draw(){
+		var canvas = document.createElement(&quot;canvas&quot;);
+		canvas.style.width=&quot;900px&quot;;
+		canvas.style.height=&quot;900px&quot;;
+		canvas.width=&quot;1000&quot;;
+		canvas.height=&quot;1000&quot;;
+		canvas.style.border=&quot;1px solid black&quot;;
+	var ctx = canvas.getContext(&quot;webgl&quot;);
+	document.getElementById(&quot;view&quot;).appendChild(canvas);	
+					
+			
+	var VSHADER_SOURCE=
+	'	void main(){					'+
+	'		gl_Position=vec4(0.0,0.0,0.0,1.0);	'+
+	'		gl_PointSize=10.0;			'+
+	'	}						';
+
+	var FSHADER_SOURCE=
+	'	void main(){					'+
+	'		gl_FragColor=vec4(1.0,0.0,0.0,1.0);	'+
+	'	}						';
+	var vertexShader=ctx.createShader(ctx.VERTEX_SHADER);
+	ctx.shaderSource(vertexShader,VSHADER_SOURCE);
+	ctx.compileShader(vertexShader);
+
+	var fragmentShader=ctx.createShader(ctx.FRAGMENT_SHADER);
+	ctx.shaderSource(fragmentShader,FSHADER_SOURCE);
+	ctx.compileShader(fragmentShader);
+
+	var program=ctx.createProgram();
+
+	ctx.attachShader(program,vertexShader);
+	ctx.attachShader(program,fragmentShader);
+	ctx.linkProgram(program);
+
+	if(!ctx.getProgramParameter(program,ctx.LINK_STATUS)){
+		var info = ctx.getProgramInfoLog(program);
+		throw &quot;Could not compile WebGL program.&quot;;
+	}
+
+	ctx.useProgram(program);
+
+	ctx.clearColor(0.0,0.0,0.0,1.0);
+	ctx.clear(ctx.COLOR_BUFFER_BIT);
+	ctx.drawArrays(ctx.PONTS,0,1);
+
+	ctx.deleteProgram(program);
+	}
+&lt;/script&gt;
+
+</description>
+        <pubDate>Thu, 09 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/webgl/2017/03/09/WebGL-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/webgl/2017/03/09/WebGL-01.html</guid>
+        
+        <category>javascript</category>
+        
+        
+        <category>WebGL</category>
+        
+      </item>
     
       <item>
         <title>指针和const</title>
@@ -25,7 +142,7 @@
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;valid&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>Thu, 09 Mar 2017 18:11:05 +0800</pubDate>
+        <pubDate>Thu, 09 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:5001/c/2017/03/09/C-02.html</link>
         <guid isPermaLink="true">http://localhost:5001/c/2017/03/09/C-02.html</guid>
         
@@ -41,7 +158,7 @@
         <description>
 &lt;h1 id=&quot;abc-gg-&quot;&gt;abc gg !&lt;/h1&gt;
 </description>
-        <pubDate>Wed, 08 Mar 2017 16:49:00 +0800</pubDate>
+        <pubDate>Wed, 08 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:5001/dos/2017/03/08/Dos-01.html</link>
         <guid isPermaLink="true">http://localhost:5001/dos/2017/03/08/Dos-01.html</guid>
         
@@ -76,7 +193,7 @@
   &lt;li&gt;make程序会读取makefile文件&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 06 Mar 2017 23:07:00 +0800</pubDate>
+        <pubDate>Mon, 06 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:5001/makefile/2017/03/06/Makefile-02.html</link>
         <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/06/Makefile-02.html</guid>
         
@@ -121,9 +238,9 @@ CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 
 </description>
-        <pubDate>Sat, 04 Mar 2017 13:42:00 +0800</pubDate>
-        <link>http://localhost:5001/makefile/2017/03/04/Makefile-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/04/Makefile-01.html</guid>
+        <pubDate>Fri, 03 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/makefile/2017/03/03/Makefile-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makefile-01.html</guid>
         
         <category>cmake</category>
         
@@ -139,9 +256,31 @@ CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;20/02/2017&lt;a href=&quot;/asm/2017/02/20/Asm-01.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;19/02/2017&lt;a href=&quot;/asm/2017/02/19/Asm-01.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/li&gt;
     
         &lt;li&gt;01/01/2017&lt;a href=&quot;/asm/2017/01/01/Asm-00.html&quot;&gt;Asm目录&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;C&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;09/03/2017&lt;a href=&quot;/c/2017/03/09/C-02.html&quot;&gt;指针和const&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;27/02/2017&lt;a href=&quot;/c/2017/02/27/C-01.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/c/2017/01/01/C-00.html&quot;&gt;C目录&lt;/a&gt;&lt;/li&gt;
+    
+&lt;/ul&gt;
+
+&lt;h2&gt;Dos&lt;/h2&gt;
+&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;arc-list&quot;&gt;
+    
+        &lt;li&gt;08/03/2017&lt;a href=&quot;/dos/2017/03/08/Dos-01.html&quot;&gt;常用DOS命令&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/dos/2017/01/01/Dos-00.html&quot;&gt;Dos目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
@@ -149,7 +288,7 @@ CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;18/02/2017&lt;a href=&quot;/javascript/2017/02/18/JavaScript-01.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;17/02/2017&lt;a href=&quot;/javascript/2017/02/17/JavaScript-01.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
     
         &lt;li&gt;01/01/2017&lt;a href=&quot;/javascript/2017/01/01/JavaScript-00.html&quot;&gt;JavaScript目录&lt;/a&gt;&lt;/li&gt;
     
@@ -161,21 +300,9 @@ CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
     
         &lt;li&gt;06/03/2017&lt;a href=&quot;/makefile/2017/03/06/Makefile-02.html&quot;&gt;Hello World !&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;04/03/2017&lt;a href=&quot;/makefile/2017/03/04/Makefile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makefile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/li&gt;
     
         &lt;li&gt;01/01/2017&lt;a href=&quot;/makefile/2017/01/01/Makefile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;C&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;09/03/2017&lt;a href=&quot;/c/2017/03/09/C-02.html&quot;&gt;指针和const&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;28/02/2017&lt;a href=&quot;/c/2017/02/28/C-01.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/c/2017/01/01/C-00.html&quot;&gt;C目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
@@ -183,36 +310,28 @@ CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;28/02/2017&lt;a href=&quot;/test/2017/02/28/Test-02.html&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;27/02/2017&lt;a href=&quot;/test/2017/02/27/Test-02.html&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;16/02/2017&lt;a href=&quot;/test/2017/02/16/Test-01.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;15/02/2017&lt;a href=&quot;/test/2017/02/15/Test-01.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/li&gt;
     
-        &lt;li&gt;02/01/2017&lt;a href=&quot;/test/2017/01/02/Test-00.html&quot;&gt;Test目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;Dos&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;08/03/2017&lt;a href=&quot;/dos/2017/03/08/Dos-01.html&quot;&gt;常用DOS命令&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;02/01/2017&lt;a href=&quot;/dos/2017/01/02/Dos-00.html&quot;&gt;Dos目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/test/2017/01/01/Test-00.html&quot;&gt;Test目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
 &lt;h2&gt;WebGL&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;1&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;arc-list&quot;&gt;
     
-        &lt;li&gt;02/01/2017&lt;a href=&quot;/webgl/2017/01/02/WebGL-00.html&quot;&gt;WebGL目录&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;09/03/2017&lt;a href=&quot;/webgl/2017/03/09/WebGL-01.html&quot;&gt;WebGL_Test_1&lt;/a&gt;&lt;/li&gt;
+    
+        &lt;li&gt;01/01/2017&lt;a href=&quot;/webgl/2017/01/01/WebGL-00.html&quot;&gt;WebGL目录&lt;/a&gt;&lt;/li&gt;
     
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Tue, 28 Feb 2017 09:08:55 +0800</pubDate>
-        <link>http://localhost:5001/test/2017/02/28/Test-02.html</link>
-        <guid isPermaLink="true">http://localhost:5001/test/2017/02/28/Test-02.html</guid>
+        <pubDate>Mon, 27 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/test/2017/02/27/Test-02.html</link>
+        <guid isPermaLink="true">http://localhost:5001/test/2017/02/27/Test-02.html</guid>
         
         
         <category>Test</category>
@@ -231,9 +350,9 @@ CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>Tue, 28 Feb 2017 04:11:05 +0800</pubDate>
-        <link>http://localhost:5001/c/2017/02/28/C-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/c/2017/02/28/C-01.html</guid>
+        <pubDate>Mon, 27 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/c/2017/02/27/C-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/c/2017/02/27/C-01.html</guid>
         
         <category>cpp</category>
         
@@ -260,9 +379,9 @@ codesg ends
 end&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>Mon, 20 Feb 2017 11:33:05 +0800</pubDate>
-        <link>http://localhost:5001/asm/2017/02/20/Asm-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/asm/2017/02/20/Asm-01.html</guid>
+        <pubDate>Sun, 19 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/asm/2017/02/19/Asm-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/asm/2017/02/19/Asm-01.html</guid>
         
         <category>x86asm</category>
         
@@ -335,9 +454,9 @@ end&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>Sat, 18 Feb 2017 15:46:05 +0800</pubDate>
-        <link>http://localhost:5001/javascript/2017/02/18/JavaScript-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/javascript/2017/02/18/JavaScript-01.html</guid>
+        <pubDate>Fri, 17 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/javascript/2017/02/17/JavaScript-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/javascript/2017/02/17/JavaScript-01.html</guid>
         
         <category>javascript</category>
         
@@ -363,37 +482,12 @@ end&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 16 Feb 2017 13:09:05 +0800</pubDate>
-        <link>http://localhost:5001/test/2017/02/16/Test-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/test/2017/02/16/Test-01.html</guid>
+        <pubDate>Wed, 15 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/test/2017/02/15/Test-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/test/2017/02/15/Test-01.html</guid>
         
         
         <category>Test</category>
-        
-      </item>
-    
-      <item>
-        <title>WebGL目录</title>
-        <description>
-&lt;h1 id=&quot;webgl&quot;&gt;WebGL&lt;/h1&gt;
-&lt;table&gt;
-	&lt;tr&gt;
-		&lt;th&gt;title&lt;/th&gt;
-		&lt;th&gt;date&lt;/th&gt;	
-		&lt;th&gt;category&lt;/th&gt;
-	&lt;/tr&gt;
-			
-				
-			
-&lt;/table&gt;
-
-</description>
-        <pubDate>Mon, 02 Jan 2017 11:36:00 +0800</pubDate>
-        <link>http://localhost:5001/webgl/2017/01/02/WebGL-00.html</link>
-        <guid isPermaLink="true">http://localhost:5001/webgl/2017/01/02/WebGL-00.html</guid>
-        
-        
-        <category>WebGL</category>
         
       </item>
     
