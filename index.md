@@ -15,7 +15,26 @@ layout: default
 	{% endfor %}
 </div>
 
+
+
 <table>
+	<tr>
+		<th>title</th>
+		<th>date</th>	
+		<th>category</th>
+	</tr>
+	{% for category in site.categories %}
+		<tr>
+			<td><a href="{{ category.last.last.url }}">{{ category.last.last.title | remove: "目录" }}</a></td>
+			<td>{{ category.last.last.date | date: "%Y-%m-%d" }}</td>	
+			<td>{{ category.last.last.categories }}</td>
+		</tr>
+	{% endfor %}
+</table>
+
+
+
+<!--<table>
 	<tr>
 		<th>title</th>
 		<th>date</th>	
@@ -30,4 +49,4 @@ layout: default
 			</tr>
 		{% endfor %}
 	{% endfor %}
-</table>
+</table>-->
