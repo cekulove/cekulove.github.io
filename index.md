@@ -3,7 +3,6 @@ layout: default
 ---
 
 {% assign colors = "orange button,red button,blue button,green button,magenta button,orangellow button" | split: "," %}
-
 <div class="animationButton">
 	{% for category in site.categories %}
 		{% for color in colors %}
@@ -14,8 +13,6 @@ layout: default
 		{% endfor %}
 	{% endfor %}
 </div>
-
-
 
 <table>
 	<tr>
@@ -31,8 +28,6 @@ layout: default
 		</tr>
 	{% endfor %}
 </table>
-
-
 
 <!--<table>
 	<tr>
