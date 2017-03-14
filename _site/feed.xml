@@ -5,8 +5,8 @@
     <description>It is never too late to learn.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Mar 2017 23:43:55 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 23:43:55 +0800</lastBuildDate>
+    <pubDate>Wed, 15 Mar 2017 01:02:22 +0800</pubDate>
+    <lastBuildDate>Wed, 15 Mar 2017 01:02:22 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -329,6 +329,29 @@
         
         
         <category>WebGL</category>
+        
+      </item>
+    
+      <item>
+        <title>Quenching_Test</title>
+        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;G1 G22 G64 G90 G94
+M22
+M20
+M36
+G4 F5
+X100 F150
+M37
+G4 F200
+M2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 13 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/quenching/2017/03/13/Quenching-01.html</link>
+        <guid isPermaLink="true">http://localhost:5001/quenching/2017/03/13/Quenching-01.html</guid>
+        
+        
+        <category>Quenching</category>
         
       </item>
     
@@ -777,103 +800,6 @@ CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         
         
         <category>Makefile</category>
-        
-      </item>
-    
-      <item>
-        <title>目录</title>
-        <description>
-&lt;h2&gt;Asm&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;2&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;19/02/2017&lt;a href=&quot;/asm/2017/02/19/Asm-01.html&quot;&gt;第一个汇编程序&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/asm/2017/01/01/Asm-00.html&quot;&gt;Asm目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;C&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;09/03/2017&lt;a href=&quot;/c/2017/03/09/C-02.html&quot;&gt;指针和const&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;27/02/2017&lt;a href=&quot;/c/2017/02/27/C-01.html&quot;&gt;第一个C程序&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/c/2017/01/01/C-00.html&quot;&gt;C目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;Dos&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;13/03/2017&lt;a href=&quot;/dos/2017/03/13/Dos-02.html&quot;&gt;MD&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;08/03/2017&lt;a href=&quot;/dos/2017/03/08/Dos-01.html&quot;&gt;CD&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/dos/2017/01/01/Dos-00.html&quot;&gt;Dos目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;JavaScript&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;10/03/2017&lt;a href=&quot;/javascript/2017/03/10/JavaScript-02.html&quot;&gt;原始表达式&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;17/02/2017&lt;a href=&quot;/javascript/2017/02/17/JavaScript-01.html&quot;&gt;webGL_Test&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/javascript/2017/01/01/JavaScript-00.html&quot;&gt;JavaScript目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;Makefile&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;06/03/2017&lt;a href=&quot;/makefile/2017/03/06/Makefile-02.html&quot;&gt;Hello World !&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;03/03/2017&lt;a href=&quot;/makefile/2017/03/03/Makefile-01.html&quot;&gt;在makefile中有四种方式对变量赋值&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/makefile/2017/01/01/Makefile-00.html&quot;&gt;Makefile目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;Test&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;3&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;27/02/2017&lt;a href=&quot;/test/2017/02/27/Test-02.html&quot;&gt;目录&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;15/02/2017&lt;a href=&quot;/test/2017/02/15/Test-01.html&quot;&gt;Welcome to Jekyll!&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/test/2017/01/01/Test-00.html&quot;&gt;Test目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-&lt;h2&gt;WebGL&lt;/h2&gt;
-&lt;p&gt;&lt;span&gt;4&lt;/span&gt;&lt;/p&gt;
-&lt;ul class=&quot;arc-list&quot;&gt;
-    
-        &lt;li&gt;13/03/2017&lt;a href=&quot;/webgl/2017/03/13/WebGL-03.html&quot;&gt;WebGL_Demo_02&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;13/03/2017&lt;a href=&quot;/webgl/2017/03/13/WebGL-02.html&quot;&gt;WebGL_Demo_01&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;09/03/2017&lt;a href=&quot;/webgl/2017/03/09/WebGL-01.html&quot;&gt;WebGL_Test_1&lt;/a&gt;&lt;/li&gt;
-    
-        &lt;li&gt;01/01/2017&lt;a href=&quot;/webgl/2017/01/01/WebGL-00.html&quot;&gt;WebGL目录&lt;/a&gt;&lt;/li&gt;
-    
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 27 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:5001/test/2017/02/27/Test-02.html</link>
-        <guid isPermaLink="true">http://localhost:5001/test/2017/02/27/Test-02.html</guid>
-        
-        
-        <category>Test</category>
         
       </item>
     
