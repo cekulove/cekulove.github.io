@@ -5,8 +5,8 @@
     <description>It is never too late to learn.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Mar 2017 01:02:22 +0800</pubDate>
-    <lastBuildDate>Wed, 15 Mar 2017 01:02:22 +0800</lastBuildDate>
+    <pubDate>Thu, 16 Mar 2017 22:54:51 +0800</pubDate>
+    <lastBuildDate>Thu, 16 Mar 2017 22:54:51 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -760,7 +760,7 @@ cls
     
       <item>
         <title>在makefile中有四种方式对变量赋值</title>
-        <description>&lt;h2 id=&quot;1简单展开&quot;&gt;1.简单展开&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;1simply-expanded-variable&quot;&gt;1.simply expanded variable&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;MAKE_DEPEND := $&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CC&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; -M&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -772,7 +772,7 @@ cls
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;2递归展开&quot;&gt;2.递归展开&lt;/h2&gt;
+&lt;h2 id=&quot;2recursively-expanded-variable&quot;&gt;2.recursively expanded variable&lt;/h2&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;MAKE_DEPEND = $&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CC&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; -M&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -788,9 +788,13 @@ CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;只要在此之前没有引用过MAKE_DEPEND就没问题。&lt;br /&gt;
-另外，不止是“迟滞展开”，事实上每次使用该变量，等号右边的内容都会被重新展开。&lt;/p&gt;
+另外，不止是“迟滞展开”，事实上每次使用该变量，等号右边的内容都会被重新展开。
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;h2 id=&quot;3conditional-assignment&quot;&gt;3.conditional assignment&lt;/h2&gt;
+
+&lt;h2 id=&quot;4append-operator&quot;&gt;4.append operator&lt;/h2&gt;
 </description>
         <pubDate>Fri, 03 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:5001/makefile/2017/03/03/Makefile-01.html</link>
