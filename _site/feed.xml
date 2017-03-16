@@ -5,8 +5,8 @@
     <description>It is never too late to learn.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Mar 2017 22:54:51 +0800</pubDate>
-    <lastBuildDate>Thu, 16 Mar 2017 22:54:51 +0800</lastBuildDate>
+    <pubDate>Thu, 16 Mar 2017 23:16:58 +0800</pubDate>
+    <lastBuildDate>Thu, 16 Mar 2017 23:16:58 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -722,6 +722,34 @@ cls
       </item>
     
       <item>
+        <title>宏</title>
+        <description>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;define vavava
+	color 0A
+	echo Hello World !
+	echo Hello Vim !
+	echo 1234567890 &amp;gt; test.txt
+	pause
+endef&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;使用范例&quot;&gt;使用范例：&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;lolo: $&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;reset&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	$&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;vavava&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Mon, 06 Mar 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:5001/makefile/2017/03/06/Makefile-03.html</link>
+        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/06/Makefile-03.html</guid>
+        
+        <category>cmake</category>
+        
+        
+        <category>Makefile</category>
+        
+      </item>
+    
+      <item>
         <title>Hello World !</title>
         <description>&lt;h2 id=&quot;如何编写一个简单的makefile&quot;&gt;如何编写一个简单的makefile&lt;/h2&gt;
 &lt;p&gt;makefile文件中包含了一组规则.&lt;br /&gt;
@@ -750,55 +778,6 @@ cls
         <pubDate>Mon, 06 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:5001/makefile/2017/03/06/Makefile-02.html</link>
         <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/06/Makefile-02.html</guid>
-        
-        <category>cmake</category>
-        
-        
-        <category>Makefile</category>
-        
-      </item>
-    
-      <item>
-        <title>在makefile中有四种方式对变量赋值</title>
-        <description>&lt;h2 id=&quot;1simply-expanded-variable&quot;&gt;1.simply expanded variable&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;MAKE_DEPEND := $&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CC&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; -M&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;这种方式叫做“简单展开”，在读到makefile中的这一行时等号右边就立即被展开，等号右边引用的所有变量（如例子中的CC）也会被立即展开。其行为与一般编程和脚本语言相同。&lt;br /&gt;
-当等号右边引用的变量（如例子中的CC）还没有被定义时，它被展开成空（nothing）而不是空格之类。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;2recursively-expanded-variable&quot;&gt;2.recursively expanded variable&lt;/h2&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;MAKE_DEPEND = $&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CC&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; -M&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;这种方式叫做“递归展开”，直到该变量被使用时等号右边的内容才会被展开，其实叫做“迟滞展开”更合适。神奇的是，这种展开方式可以不按顺序定义变量。&lt;br /&gt;
-比如:&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;MAKE_DEPEND = $&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CC&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; -M
-&lt;span class=&quot;c1&quot;&gt;# ...&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Some time later&lt;/span&gt;
-CC = gcc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;只要在此之前没有引用过MAKE_DEPEND就没问题。&lt;br /&gt;
-另外，不止是“迟滞展开”，事实上每次使用该变量，等号右边的内容都会被重新展开。
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;3conditional-assignment&quot;&gt;3.conditional assignment&lt;/h2&gt;
-
-&lt;h2 id=&quot;4append-operator&quot;&gt;4.append operator&lt;/h2&gt;
-</description>
-        <pubDate>Fri, 03 Mar 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:5001/makefile/2017/03/03/Makefile-01.html</link>
-        <guid isPermaLink="true">http://localhost:5001/makefile/2017/03/03/Makefile-01.html</guid>
         
         <category>cmake</category>
         
