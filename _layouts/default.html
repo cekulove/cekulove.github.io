@@ -11,8 +11,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/{{ tag }}.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 	{% endfor %}
-
-    
+	{% if page.categories contains "Matrices" %}
+		<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script>
+	{% endif %}	
     <title>{{ site.title | default: site.github.repository_name }} by {{ site.github.owner_name }}</title>
   </head>
 
