@@ -5,10 +5,10 @@ function test1(){
 	canvas.width="1000";
 	canvas.height="1000";
 	canvas.style.border="1px solid black";
-	var gl = canvas.getContext("webgl");
+	var ctx = canvas.getContext("webgl");
 	document.getElementById("view").appendChild(canvas);	
 				
-		
+	var gl = ctx;
 	var VSHADER_SOURCE=
 	'	void main(){							'+
 	'		gl_Position=vec4(0.0,0.0,0.0,1.0);	'+

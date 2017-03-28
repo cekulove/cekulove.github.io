@@ -5,8 +5,8 @@
     <description>It is never too late to learn.</description>
     <link>http://localhost:5001/</link>
     <atom:link href="http://localhost:5001/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Mar 2017 23:53:59 +0800</pubDate>
-    <lastBuildDate>Mon, 27 Mar 2017 23:53:59 +0800</lastBuildDate>
+    <pubDate>Tue, 28 Mar 2017 22:32:46 +0800</pubDate>
+    <lastBuildDate>Tue, 28 Mar 2017 22:32:46 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -805,12 +805,26 @@ For example, assume \a does not exist then:&lt;/p&gt;
     
       <item>
         <title>原始表达式</title>
-        <description>&lt;h4 id=&quot;直接量&quot;&gt;直接量&lt;/h4&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt;
-&lt;span class=&quot;sr&quot;&gt;/pattern/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+        <description>&lt;ul&gt;
+  &lt;li&gt;最简单的表达式是“原始表达式”(primary expression)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* 直接量 */&lt;/span&gt;
+&lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//数字直接量&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;&quot;hello&quot;&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//字符串直接量&lt;/span&gt;
+&lt;span class=&quot;sr&quot;&gt;/pattern/&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//正则表达式直接量&lt;/span&gt;
+  
+&lt;span class=&quot;cm&quot;&gt;/* 某些保留字构成原始表达式 */&lt;/span&gt;
+&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;
+  
+&lt;span class=&quot;cm&quot;&gt;/* 变量 */&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;
+&lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
         <pubDate>Fri, 10 Mar 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:5001/javascript/2017/03/10/JavaScript-02.html</link>
