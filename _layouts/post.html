@@ -13,8 +13,9 @@ layout: default
   </div>
 
 </article> <hr/>
+
+<a href="javascript:history.go(-1);"><img alt="UNDO" width="60" height="55" src="/assets/images/undo.png" title="撤销"/></a>
 {% unless page.title contains '目录' %}
-	<a href="/{{page.categories.first|downcase}}/2017/01/01/{{page.categories}}-00.html")>返回{{ page.categories }}目录</a><br/>
+<a href="/{{page.categories.first|downcase}}/2017/01/01/{{page.categories}}-00.html")><img alt="返回{{ page.categories }}目录" width="60" height="55" src="/assets/images/menu.png" title="返回{{ page.categories }}目录" /></a>
 {% endunless %}
-<a href="javascript:history.go(-1);"><img alt="BACK" width="50" height="45" src="/assets/images/back.png" title="后退"/></a>
-<a href="/"><img alt="HOME" width="50" height="45" src="/assets/images/home.png" title="返回主页"/></a>
+<a href="/"><img alt="HOME" width="60" height="55" src="/assets/images/home.png" title="返回主页"/></a>

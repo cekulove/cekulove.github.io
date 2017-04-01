@@ -17,7 +17,7 @@
 		document.body.appendChild(canvas);						
 		document.body.style.textAlign="center";
 				
-		vat gl = ctx;
+		var gl = ctx;
 		var VSHADER_SOURCE=
 		'	void main(){								'+
 		'		gl_Position=vec4(0.0,0.0,0.0,1.0);		'+
@@ -54,7 +54,7 @@
 
 		gl.clearColor(0.0,0.0,0.0,1.0);
 		gl.clear(gl.COLOR_BUFFER_BIT);
-		gl.drawArrays(gl.PONTS,0,1);
+		gl.drawArrays(gl.PIONTS,0,1);
 
 		gl.deleteProgram(program);
 	</script>
