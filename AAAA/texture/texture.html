@@ -93,7 +93,7 @@
       gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,img);
       gl.uniform1i(u_Sampler,0);
 
-	  setInterval("draw()",500);
+	  
     }
     
     // draw
@@ -106,7 +106,7 @@
         gl.drawArrays(gl.TRIANGLES, 0, 3);
     }
     
-			
+			setInterval("draw()",500);
 			
 			var rect=canvas.getBoundingClientRect();
 			var width=rect.right-rect.left;
