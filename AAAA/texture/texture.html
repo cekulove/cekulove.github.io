@@ -80,6 +80,7 @@
 			gl.bindBuffer(gl.ARRAY_BUFFER,null);
 			
     // Texture
+			gl.disable(gl.DEPTH_TEST);
     var u_Sampler=gl.getUniformLocation(program,"u_Sampler");
     var img=new Image();
     img.src="test.png";
