@@ -9,8 +9,8 @@ var VSHADER_SOURCE =
 '	}											';
 
 var FSHADER_SOURCE =
-'	uniform sampler2D u_Sampler;  '+
-'	varying lowp vec2 v_TexCoord; '+
+'	uniform highp sampler2D u_Sampler;  '+
+'	varying highp vec2 v_TexCoord; '+
 '	void main(){								'+
 '		gl_FragColor = texture2D(u_Sampler,v_TexCoord);					'+
 '	}											';
