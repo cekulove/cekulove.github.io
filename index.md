@@ -14,7 +14,7 @@ layout: default
 	{% endfor %}
 </div>
 
-<table>
+<!--<table>
 	<tr>
 		<th>title</th>
 		<th>date</th>	
@@ -27,7 +27,7 @@ layout: default
 			<td>{{ category.last.last.categories }}</td>
 		</tr>
 	{% endfor %}
-</table>
+</table>-->
 
 <!--<table>
 	<tr>
