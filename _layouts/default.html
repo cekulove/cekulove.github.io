@@ -3,6 +3,17 @@
   <head>
 	<meta charset='utf-8'>
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	
+        <!-- CodeMirror -->
+        <script src="../CodeMirror/codemirror/lib/codemirror.js"></script>
+        <link href="../CodeMirror/codemirror/lib/codemirror.css" rel="stylesheet">
+        <script src="../CodeMirror/codemirror/mode/xml/xml.js"></script>
+        <script src="../CodeMirror/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+        <script src="../CodeMirror/codemirror/mode/javascript/javascript.js"></script>
+        <script src="../CodeMirror/codemirror/mode/clike/clike.js"></script>
+	<link href="../CodeMirror/codemirror/theme/monokai.css" rel="stylesheet">
+        <！-- CodeMirror -->
+
 	<link rel="stylesheet" href="{{ '/assets/css/button.css?v=' | append: site.github.build_revision | relative_url }}">
 	<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 	{% for tag in page.tags %}
