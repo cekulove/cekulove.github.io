@@ -2,5 +2,5 @@
 description: It is never too late to learn.
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-cayman
+theme: jekyll-theme-slate
 port: 5001
