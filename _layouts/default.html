@@ -7,6 +7,17 @@
 	<link rel="stylesheet" href="{{ '/assets/css/button.css?v=' | append: site.github.build_revision | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
+  {% if page.title == "CodeMirror" %}
+    <!-- CodeMirror -->
+    <script src="{{ '/assets/codemirror/lib/codemirror.js' }}"></script>
+    <link href="{{ '/assets/codemirror/lib/codemirror.css' }}" rel="stylesheet">
+    <script src="{{ '/assets/codemirror/mode/xml/xml.js' }}"></script>
+    <script src="{{ '/assets/codemirror/mode/htmlmixed/htmlmixed.js' }}"></script>
+    <script src="{{ '/assets/codemirror/mode/javascript/javascript.js' }}"></script>
+    <script src="{{ '/assets/codemirror/mode/clike/clike.js' }}"></script>
+    <link href="{{ '/assets/codemirror/theme/monokai.css' }}" rel="stylesheet">
+  {% endif %}
+
   <!-- highlight -->
 	{% for tag in page.tags %}
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css">
