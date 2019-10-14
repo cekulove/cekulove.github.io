@@ -26,6 +26,7 @@ categories: Test
     CodeMirror(document.getElementById("tt"),{
         value: text,
         lineNumbers: true,
-        mode: "htmlmixed"
+        mode: "htmlmixed",
+        theme: "monokai"
     });
 </script>
