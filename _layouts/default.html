@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta charset='utf-8'>
-	<meta http-equiv="X-UA-Compatible" content="chrome=1">
-	
-        <!-- CodeMirror -->
-        <script src="../CodeMirror/codemirror/lib/codemirror.js"></script>
-        <link href="../CodeMirror/codemirror/lib/codemirror.css" rel="stylesheet">
-        <script src="../CodeMirror/codemirror/mode/xml/xml.js"></script>
-        <script src="../CodeMirror/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-        <script src="../CodeMirror/codemirror/mode/javascript/javascript.js"></script>
-        <script src="../CodeMirror/codemirror/mode/clike/clike.js"></script>
-	<link href="../CodeMirror/codemirror/theme/monokai.css" rel="stylesheet">
+	<meta charset='utf-8' />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
 	<link rel="stylesheet" href="{{ '/assets/css/button.css?v=' | append: site.github.build_revision | relative_url }}">
-	<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+  <!-- highlight -->
 	{% for tag in page.tags %}
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/{{ tag }}.min.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
-	{% endfor %}
+  {% endfor %}
+
+  <!-- AsciiMath -->
 	{% if page.categories contains "Matrices" %}
 		<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script>
-	{% endif %}	
+  {% endif %}	
+
     <title>{{ site.title | default: site.github.repository_name }} by {{ site.github.owner_name }}</title>
   </head>
 
