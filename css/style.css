@@ -1,0 +1,22 @@
+#console {
+	color: #0f0;
+	background-color: black;
+	min-height: 100px;
+	max-width:600px;
+}
+
+a {
+	text-decoration: none;
+}
+
+* {
+	background-color: black;
+}
+
+.title {
+	color: #0f0;
+	font-size: 50px;
+}
+.title a{
+	color: #0f0;
+}

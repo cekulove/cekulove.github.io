@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DrawRectangle</title>
+	<script src="../codemirror/lib/codemirror.js"></script>
+	<link href="../codemirror/lib/codemirror.css" rel="stylesheet">
+	<script src="../codemirror/mode/xml/xml.js"></script>
+	<script src="../codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="../codemirror/mode/javascript/javascript.js"></script>
+	<script src="../codemirror/mode/clike/clike.js"></script>
+	<link href="../codemirror/theme/monokai.css" rel="stylesheet">
+	<style>
+		.CodeMirror {
+			border: 1px solid #eee;
+			height: auto;
+		}
+	</style>
+
+</head>
+<body>
+	<textarea id="fragment-shader" style="display:none">
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="utf-8" />
+			<title>Draw a blue rectangle (canvas version)</title>
+		</head>
+		<body onload="main()">
+			<canvas id="example" width="400" height="400">
+				Please use a browser that supports "canvas".
+			</canvas>
+			<script src="DrawRectangle.js"></script>
+		</body>
+		</html>
+	</textarea>
+	<textarea id="js" style="display:none">
+		function main(){
+			//Retrieve <canvas> element
+			var canvas=document.getElementById("example");
+			if (!canvas){
+				console.log("Failed to retrieve the <canvas> element");
+				return;
+			}
+      
+			//Get the rendering context for 2DCG
+			var ctx=canvas.getContext("2d");
+      
+			//Draw a blue rectangle
+			ctx.fillStyle="rgba(0,0,255,1.0)";  //Set color to blue
+			ctx.fillRect(120,10,150,150);       //Fill a rectangle with the color
+		}
+	</textarea>
+	<script>
+		document.write("DrawRectangle.html");
+		var myCodeMirror1 = CodeMirror(document.body, {
+			value: document.querySelector("#fragment-shader").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+			lineNumbers: true,
+			mode:  "htmlmixed"
+		});
+		document.write("<br/>");
+		document.write("DrawRectangle.js");
+		var myCodeMirror2 = CodeMirror(document.body, {
+			value: document.querySelector("#js").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+			lineNumbers: true,
+			mode:  "javascript"
+		});
+
+		document.write("<br/>");
+		var canvas=document.createElement("canvas");
+		canvas.style.border="1px solid black";
+		canvas.width="400";
+		canvas.height="400";
+		var ctx=canvas.getContext("2d");
+		document.body.appendChild(canvas);
+
+		ctx.fillStyle="rgba(0,0,255,1.0)";  //设置填充颜色为蓝色
+		ctx.fillRect(120,10,150,150);   
+	</script>
+</body>
+</html>

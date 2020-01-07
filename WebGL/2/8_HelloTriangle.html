@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HelloTriangle</title>
+	<script src="../codemirror/lib/codemirror.js"></script>
+	<link href="../codemirror/lib/codemirror.css" rel="stylesheet">
+	<script src="../codemirror/mode/xml/xml.js"></script>
+	<script src="../codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="../codemirror/mode/javascript/javascript.js"></script>
+	<script src="../codemirror/mode/clike/clike.js"></script>
+	<link href="../codemirror/theme/monokai.css" rel="stylesheet">
+	<script type="x-shader/x-vertex" id="vertex-shader">
+		attribute vec4 a_Position;
+		void main()
+		{
+			gl_PointSize=10.0;			
+			gl_Position=a_Position;
+		}
+	</script>
+	<script type="x-shader/x-fragment" id="fragment-shader">
+		void main()
+		{
+			gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);	//Set the point color
+		}
+	</script>
+	<script>
+		function initShaders(gl,VS_SOURCE,FS_SOURCE){
+			var program=createProgram(gl,VS_SOURCE,FS_SOURCE);
+			gl.useProgram(program);
+			gl.program=program;
+			return true;
+		}
+
+		function createProgram(gl,VS_SOURCE,FS_SOURCE){
+			var program=gl.createProgram();
+			var vShader=loadShader(gl,gl.VERTEX_SHADER,VS_SOURCE);
+			var fShader=loadShader(gl,gl.FRAGMENT_SHADER,FS_SOURCE);
+			gl.attachShader(program,vShader);
+			gl.attachShader(program,fShader);
+			gl.linkProgram(program);
+			var linked={
+				status: gl.getProgramParameter(program,gl.LINK_STATUS),
+				log:    gl.getProgramInfoLog(program)
+			}
+			console.log("program: "+linked.status);
+			if (!linked.status)
+				console.log(linked.log);
+			return program;
+		}
+
+		function loadShader(gl,type,source){
+			var shader=gl.createShader(type);
+			gl.shaderSource(shader,source);
+			gl.compileShader(shader);
+			var compiled={
+				status:  gl.getShaderParameter(shader,gl.COMPILE_STATUS),
+				log:     gl.getShaderInfoLog(shader)
+			}
+			if (type==gl.VERTEX_SHADER)
+				console.log("vertex shader: "+compiled.status);
+			if (type==gl.FRAGMENT_SHADER)
+				console.log("fragment shader: "+compiled.status);
+			if (!compiled.status)
+				console.log(compiled.log);
+			return shader;
+		}
+	</script>
+	<style>
+		.CodeMirror {
+			border: 1px solid #eee;
+			height: auto;
+		}
+	</style>
+
+</head>
+<body>
+	<textarea id="fragment" style="display:none">
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="utf-8" />
+			<title>MultiPoints</title>
+			<script type="x-shader/x-vertex" id="vertex-shader">
+				attribute vec4 a_Position;
+				void main()
+				{
+					gl_PointSize=10.0;		//Set the point size
+					gl_Position=a_Position;	//Set the vertex coordinates of the point
+				}
+			</script>
+			<script type="x-shader/x-fragment" id="fragment-shader">
+				void main()
+				{
+					gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);	//Set the point color
+				}
+			</script>
+			<script src="utils.js"></script>
+		</head>
+		<body onload="main()">
+			<canvas id="webgl" width="400" height="400">
+				Please use the browser supporting "canvas".
+			</canvas>
+			<script src="MultiPoints.js"></script>
+		</body>
+		</html>
+	</textarea>
+	<textarea id="js" style="display:none">
+		var VS_SOURCE=document.querySelector("#vertex-shader").innerHTML;
+		var FS_SOURCE=document.querySelector("#fragment-shader").innerHTML;
+		function main(){
+			//Retrieve <canvas> element
+			var canvas=document.getElementById("webgl");
+			if (!canvas){
+				console.log("Failed to retrieve the <canvas> element");
+				return;
+			}
+	    
+			//Get the rendering context for WebGL
+			var gl=canvas.getContext("webgl");
+			if (!gl){
+				console.log("Failed to get the rendering context for WebGL");
+				return;
+			}
+	    
+			//Initialize shaders
+			if (!initShaders(gl,VS_SOURCE,FS_SOURCE)){
+				console.log("Failed to initialize shaders.");
+				return;
+			}
+			
+			// Write the positions of vertices to a vertex shader
+			var n = initVertexBuffers(gl);
+			if (n < 0) {
+				console.log('Failed to set the positions of the vertices');
+				return;
+			}
+
+			// Specify the color for clearing <canvas>
+			gl.clearColor(0, 0, 0, 1);
+
+			// Clear <canvas>
+			gl.clear(gl.COLOR_BUFFER_BIT);
+			
+			// Draw the rectangle
+			gl.drawArrays(gl.TRIANGLES, 0, n);
+		}
+		
+		function initVertexBuffers(gl) {
+			var vertices = new Float32Array([
+				0, 0.5,   -0.5, -0.5,   0.5, -0.5
+			]);
+			var n = 3; // The number of vertices
+			
+			// Create a buffer object
+			var vertexBuffer = gl.createBuffer();
+			if (!vertexBuffer) {
+				console.log('Failed to create the buffer object');
+				return -1;
+			}
+			
+			// Bind the buffer object to target
+			gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+			// Write date into the buffer object
+			gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+		
+			var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
+			if (a_Position < 0) {
+				console.log('Failed to get the storage location of a_Position');
+				return -1;
+			}
+		
+			// Assign the buffer object to a_Position variable
+			gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
+		
+			// Enable the assignment to a_Position variable
+			gl.enableVertexAttribArray(a_Position);
+		
+			return n;
+		}
+
+	</textarea>
+	<textarea id="utils" style="display:none">
+		function initShaders(gl,VS_SOURCE,FS_SOURCE){
+			var program=createProgram(gl,VS_SOURCE,FS_SOURCE);
+			gl.useProgram(program);
+			gl.program=program;
+			return true;
+		}
+
+		function createProgram(gl,VS_SOURCE,FS_SOURCE){
+			var program=gl.createProgram();
+			var vShader=loadShader(gl,gl.VERTEX_SHADER,VS_SOURCE);
+			var fShader=loadShader(gl,gl.FRAGMENT_SHADER,FS_SOURCE);
+			gl.attachShader(program,vShader);
+			gl.attachShader(program,fShader);
+			gl.linkProgram(program);
+			var linked={
+				status: gl.getProgramParameter(program,gl.LINK_STATUS),
+				log:    gl.getProgramInfoLog(program)
+			}
+			console.log("program: "+linked.status);
+			if (!linked.status)
+				console.log(linked.log);
+			return program;
+		}
+
+		function loadShader(gl,type,source){
+			var shader=gl.createShader(type);
+			gl.shaderSource(shader,source);
+			gl.compileShader(shader);
+			var compiled={
+				status:  gl.getShaderParameter(shader,gl.COMPILE_STATUS),
+				log:     gl.getShaderInfoLog(shader)
+			}
+			if (type==gl.VERTEX_SHADER)
+				console.log("vertex shader: "+compiled.status);
+			if (type==gl.FRAGMENT_SHADER)
+				console.log("fragment shader: "+compiled.status);
+			if (!compiled.status)
+				console.log(compiled.log);
+			return shader;
+		}
+	</textarea>
+	<script>
+		document.write("HelloTriangle.html");
+		var myCodeMirror1 = CodeMirror(document.body, {
+			value: document.querySelector("#fragment").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+			lineNumbers: true,
+			mode:  "htmlmixed"
+		});
+		document.write("<br/>HelloTriangle.js");
+		var myCodeMirror2 = CodeMirror(document.body, {
+			value: document.querySelector("#js").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&"),
+			lineNumbers: true,
+ 			mode:  "javascript"
+		});
+		
+		document.write("<br/>utils.js");
+		var myCodeMirror3 = CodeMirror(document.body, {
+			value: document.querySelector("#utils").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+			lineNumbers: true,
+ 			mode:  "javascript"
+		});
+
+		document.write("<br/>");
+		var canvas=document.createElement("canvas");
+		canvas.style.border="1px solid black";
+		canvas.width="400";
+		canvas.height="400";
+		var gl=canvas.getContext("webgl");
+		document.body.appendChild(canvas);
+		
+		var VS_SOURCE=document.querySelector("#vertex-shader").innerHTML;
+		var FS_SOURCE=document.querySelector("#fragment-shader").innerHTML;
+		initShaders(gl,VS_SOURCE,FS_SOURCE);
+		// Get the storage location of a_Position
+		// Write the positions of vertices to a vertex shader
+		var n = initVertexBuffers(gl);
+		if (n < 0) {
+			console.log('Failed to set the positions of the vertices');
+		}
+		// Specify the color for clearing <canvas>
+		gl.clearColor(0.0, 0.0, 0.0, 1.0);
+				
+		// Clear <canvas>
+		gl.clear(gl.COLOR_BUFFER_BIT);
+		
+		// Draw the rectangle
+		gl.drawArrays(gl.TRIANGLES, 0, n);
+			
+		function initVertexBuffers(gl) {
+			var vertices = new Float32Array([
+				0, 0.5,   -0.5, -0.5,   0.5, -0.5
+			]);
+			var n = 3; // The number of vertices
+			
+			// Create a buffer object
+			var vertexBuffer = gl.createBuffer();
+			if (!vertexBuffer) {
+				console.log('Failed to create the buffer object');
+				return -1;
+			}
+			
+			// Bind the buffer object to target
+			gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+			// Write date into the buffer object
+			gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+		
+			var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
+			if (a_Position < 0) {
+				console.log('Failed to get the storage location of a_Position');
+				return -1;
+			}
+		
+			// Assign the buffer object to a_Position variable
+			gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
+		
+			// Enable the assignment to a_Position variable
+			gl.enableVertexAttribArray(a_Position);
+		
+			return n;
+		}
+		
+	</script>
+</body>
+</html>
