@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HelloTriangle</title>
+	<title>RotatedTriangle_Matrix</title>
 	<script src="../codemirror/lib/codemirror.js"></script>
 	<link href="../codemirror/lib/codemirror.css" rel="stylesheet">
 	<script src="../codemirror/mode/xml/xml.js"></script>
@@ -10,11 +10,11 @@
 	<script src="../codemirror/mode/clike/clike.js"></script>
 	<link href="../codemirror/theme/monokai.css" rel="stylesheet">
 	<script type="x-shader/x-vertex" id="vertex-shader">
-		attribute vec4 a_Position;
+        attribute vec4 a_Position;
+        uniform mat4 u_xformMatrix;
 		void main()
 		{
-			gl_PointSize=10.0;			
-			gl_Position=a_Position;
+			gl_Position=u_xformMatrix*a_Position;
 		}
 	</script>
 	<script type="x-shader/x-fragment" id="fragment-shader">
@@ -82,10 +82,10 @@
 			<title>MultiPoints</title>
 			<script type="x-shader/x-vertex" id="vertex-shader">
 				attribute vec4 a_Position;
+				uniform mat4 u_xformMatrix;
 				void main()
 				{
-					gl_PointSize=10.0;		//Set the point size
-					gl_Position=a_Position;	//Set the vertex coordinates of the point
+					gl_Position=u_xformMatrix*a_Position;   //Set the vertex coordinates of the point
 				}
 			</script>
 			<script type="x-shader/x-fragment" id="fragment-shader">
@@ -100,7 +100,7 @@
 			<canvas id="webgl" width="400" height="400">
 				Please use the browser supporting "canvas".
 			</canvas>
-			<script src="HelloTriangle.js"></script>
+			<script src="RotatedTriangle_Matrix.html"></script>
 		</body>
 		</html>
 	</textarea>
@@ -134,6 +134,27 @@
 				console.log('Failed to set the positions of the vertices');
 				return;
 			}
+
+			// Create a rotation matrix
+			var ANGLE=90.0;
+			var radian=Math.PI*ANGLE/180.0;
+			var cosB=Math.cos(radian),sinB=Math.sin(radian);
+
+			// Note: WebGL is column major order
+			var xformMatrix=new Float32Array([
+				cosB,	sinB,	0.0,	0.0,
+				-sinB,	cosB,	0.0,	0.0,
+				0.0,	0.0,	1.0,	0.0,
+				0.0,	0.0,	0.0,	1.0
+			]);
+
+			// Pass the rotation matrix to the vertex shader
+			var u_xformMatrix=gl.getUniformLocation(gl.program,"u_xformMatrix");
+			if (!u_xformMatrix){
+				console.log("Failed to get the storage location of u_xformMatrix");
+				return;
+			}
+			gl.uniformMatrix4fv(u_xformMatrix,false,xformMatrix);
 
 			// Specify the color for clearing <canvas>
 			gl.clearColor(0, 0, 0, 1);
@@ -222,13 +243,13 @@
 		}
 	</textarea>
 	<script>
-		document.write("HelloTriangle.html");
+		document.write("RotatedTriangle_Matrix.html");
 		var myCodeMirror1 = CodeMirror(document.body, {
 			value: document.querySelector("#fragment").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
 			lineNumbers: true,
 			mode:  "htmlmixed"
 		});
-		document.write("<br/>HelloTriangle.js");
+		document.write("<br/>RotatedTriangle_Matrix.js");
 		var myCodeMirror2 = CodeMirror(document.body, {
 			value: document.querySelector("#js").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&"),
 			lineNumbers: true,
@@ -259,6 +280,26 @@
 		if (n < 0) {
 			console.log('Failed to set the positions of the vertices');
 		}
+		// Create a rotation matrix
+		var ANGLE=90.0;
+		var radian=Math.PI*ANGLE/180.0;
+		var cosB=Math.cos(radian),sinB=Math.sin(radian);
+
+		// Note: WebGL is column major onder
+		var xformMatrix=new Float32Array([
+			cosB,	sinB,	0.0,	0.0,
+			-sinB,	cosB,	0.0,	0.0,
+			0.0,	0.0,	1.0,	0.0,
+			0.0,	0.0,	0.0,	1.0
+		]);
+
+		// Pass the rotation matrix to the vertex shader
+		var u_xformMatrix=gl.getUniformLocation(gl.program,"u_xformMatrix");
+		if (!u_xformMatrix){
+			console.log("Failed to get the storage location of u_xformMatrix");
+		}
+		gl.uniformMatrix4fv(u_xformMatrix,false,xformMatrix);
+
 		// Specify the color for clearing <canvas>
 		gl.clearColor(0.0, 0.0, 0.0, 1.0);
 				
