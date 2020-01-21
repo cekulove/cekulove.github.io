@@ -18,7 +18,7 @@
 
 </head>
 <body>
-	<textarea id="fragment-shader" style="display:none">
+	<textarea id="html" style="display:none">
 		<!DOCTYPE html>
 		<html lang="en">
 		<head>
@@ -51,21 +51,11 @@
 		}
 	</textarea>
 	<script>
-		document.write("DrawRectangle.html");
-		var myCodeMirror1 = CodeMirror(document.body, {
-			value: document.querySelector("#fragment-shader").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
-			lineNumbers: true,
-			mode:  "htmlmixed"
-		});
-		document.write("<br/>");
-		document.write("DrawRectangle.js");
-		var myCodeMirror2 = CodeMirror(document.body, {
-			value: document.querySelector("#js").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
-			lineNumbers: true,
-			mode:  "javascript"
-		});
+		log("DrawRectangle.html","#html","htmlmixed");
 
-		document.write("<br/>");
+		log("DrawRectangle.js","#js","javascript");
+
+		document.write("Canvas<br/>");
 		var canvas=document.createElement("canvas");
 		canvas.style.border="1px solid black";
 		canvas.width="400";
@@ -75,6 +65,21 @@
 
 		ctx.fillStyle="rgba(0,0,255,1.0)";  //设置填充颜色为蓝色
 		ctx.fillRect(120,10,150,150);   
+		
+		function log(str,type,mod){
+			var text=document.createElement("div");
+			text.innerHTML=str;
+			document.body.appendChild(text);
+			var myCodeMirror=CodeMirror(
+				document.body,
+				{
+					value: document.querySelector(type).innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+					lineNumbers: true,
+					mode:	mod  
+				}
+			)
+			document.write("<br/>")
+		}
 	</script>
 </body>
 </html>
