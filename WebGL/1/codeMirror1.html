@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>codeMirror1</title>
+	<script src="../codemirror/lib/codemirror.js"></script>
+	<link href="../codemirror/lib/codemirror.css" rel="stylesheet">
+	<script src="../codemirror/mode/xml/xml.js"></script>
+	<script src="../codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="../codemirror/mode/javascript/javascript.js"></script>
+	<script src="../codemirror/mode/clike/clike.js"></script>
+	<link href="../codemirror/theme/monokai.css" rel="stylesheet">
+	<script src="../../js/jquery.js"></script>
+	<style>
+		.CodeMirror {
+			border: 1px solid #eee;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<span id="html">DrawRectangle.html ⇡</span><br/>
+	<textarea id="htmlContent" style="display: none;">
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="utf-8" />
+			<title>Draw a blue rectangle (canvas version)</title>
+		</head>
+		<body onload="main()">
+			<canvas id="example" width="400" height="400">
+				Please use a browser that supports "canvas".
+			</canvas>
+			<script src="DrawRectangle.js"></script>
+		</body>
+		</html>
+	</textarea>
+	<div id="view1"></div >
+	<span id="js">DrawRectangle.js</span><br/>
+	<textarea id="jsContent">
+		function main(){
+			//Retrieve <canvas> element
+			var canvas=document.getElementById("example");
+			if (!canvas){
+				console.log("Failed to retrieve the <canvas> element");
+				return;
+			}
+      
+			//Get the rendering context for 2DCG
+			var ctx=canvas.getContext("2d");
+      
+			//Draw a blue rectangle
+			ctx.fillStyle="rgba(0,0,255,1.0)";  //Set color to blue
+			ctx.fillRect(120,10,150,150);       //Fill a rectangle with the color
+		}
+	</textarea>
+
+	<script>
+		var button=document.getElementById("html");
+		button.style.border="0px solid whtie";
+
+		var myTextarea1 = document.getElementById('htmlContent');
+		myTextarea1.innerHTML=myTextarea1.innerHTML.replace(/(^|\n)\t\t/g,"$1");
+
+		var CodeMirrorEditor1 = CodeMirror.fromTextArea(myTextarea1, {
+			mode:"htmlmixed",
+			lineNumbers:true
+		});
+
+		var myTextarea2 = document.getElementById('jsContent');
+		myTextarea2.innerHTML=myTextarea2.innerHTML.replace(/(^|\n)\t\t/g,"$1");
+
+        var CodeMirrorEditor2 = CodeMirror.fromTextArea(myTextarea2, {
+			mode:"javascript",
+			lineNumbers:true
+		});
+		
+
+		
+		var tag="view";
+		button.onclick=function(){
+			if (tag=="view")  {
+				CodeMirrorEditor1.toTextArea();
+				myTextarea1.style.display="none";
+				button.innerHTML="DrawRectangle.html ⇣";
+				tag="none";
+			}
+			else{
+				CodeMirrorEditor1=CodeMirror.fromTextArea(myTextarea1,{
+					mode:"htmlmixed",
+					lineNumbers:"true"
+				});
+				button.innerHTML="DrawRectangle.html ⇡";
+				tag="view";
+			}
+		}
+
+		/*document.write("CodeMirror.version: &nbsp;"+CodeMirror.version+"<br/>");
+		var doc=CodeMirrorEditor1.getDoc();
+		document.write(doc.lineCount()+"<br/>");
+		alert(doc.getLine(0)+"<br/>");
+		alert(doc.getValue()+"<br/>");*/
+		
+	</script>
+
+
+</body>
+</html>
+
+
+
+
