@@ -2,13 +2,14 @@
 <html>
 <head>
 	<title>DrawRectangle</title>
+	<script src="../../js/jquery.js"></script>
 	<script src="../codemirror/lib/codemirror.js"></script>
 	<link href="../codemirror/lib/codemirror.css" rel="stylesheet">
 	<script src="../codemirror/mode/xml/xml.js"></script>
 	<script src="../codemirror/mode/htmlmixed/htmlmixed.js"></script>
 	<script src="../codemirror/mode/javascript/javascript.js"></script>
-	<script src="../codemirror/mode/clike/clike.js"></script>
-	<link href="../codemirror/theme/monokai.css" rel="stylesheet">
+	<!--<script src="../codemirror/mode/clike/clike.js"></script>
+	<link href="../codemirror/theme/monokai.css" rel="stylesheet">-->
 	<style>
 		.CodeMirror {
 			border: 1px solid #eee;
@@ -52,33 +53,35 @@
 	</textarea>
 	<script>
 		log("DrawRectangle.html","#html","htmlmixed");
-
 		log("DrawRectangle.js","#js","javascript");
 
-		document.write("Canvas<br/>");
-		var canvas=document.createElement("canvas");
-		canvas.style.border="1px solid black";
-		canvas.width="400";
-		canvas.height="400";
-		var ctx=canvas.getContext("2d");
-		document.body.appendChild(canvas);
+		var title=$("<div>Canvas</div>");
+		title.appendTo("body");
+		var canvas=$("<canvas id='example' width='400' height='400'></canvas>");
+		canvas.css("border","1px solid #ccc");
+		canvas.appendTo("body");
+		title.click(()=>canvas.toggle());
 
-		ctx.fillStyle="rgba(0,0,255,1.0)";  //设置填充颜色为蓝色
-		ctx.fillRect(120,10,150,150);   
+		var script=$("<script>");
+		script.html($("#js").html().replace(/&lt;/g,"<").replace(/&gt;/g,">"));
+		script.appendTo("body");
+		main();
 		
-		function log(str,type,mod){
-			var text=document.createElement("div");
-			text.innerHTML=str;
-			document.body.appendChild(text);
+		function log(str,type,mode){
+			var title=$("<div>str</div>".replace("str",str));
+			title.appendTo("body");
+			var code=$("<div></div>");
+			code.appendTo("body");
 			var myCodeMirror=CodeMirror(
-				document.body,
+				code[0],
 				{
 					value: document.querySelector(type).innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
 					lineNumbers: true,
-					mode:	mod  
+					mode:	mode  
 				}
 			)
-			document.write("<br/>")
+			title.click(()=>code.toggle());
+			//code.append($("<br/>"));
 		}
 	</script>
 </body>
