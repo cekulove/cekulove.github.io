@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>HelloPoint2</title>
+	<script src="../../js/jquery.js"></script>
 	<script src="../codemirror/lib/codemirror.js"></script>
 	<link href="../codemirror/lib/codemirror.css" rel="stylesheet">
 	<script src="../codemirror/mode/xml/xml.js"></script>
@@ -9,72 +10,15 @@
 	<script src="../codemirror/mode/javascript/javascript.js"></script>
 	<script src="../codemirror/mode/clike/clike.js"></script>
 	<link href="../codemirror/theme/monokai.css" rel="stylesheet">
-	<script type="x-shader/x-vertex" id="vertex-shader">
-		attribute vec4 a_Position;
-		void main()
-		{
-			gl_PointSize=100.0;			
-			gl_Position=a_Position;
-		}
-	</script>
-	<script type="x-shader/x-fragment" id="fragment-shader">
-		void main()
-		{
-			gl_FragColor=vec4(1.0,0.0,0.0,1.0);	//设置颜色
-		}
-	</script>
-	<script>
-		function initShaders(gl,VS_SOURCE,FS_SOURCE){
-			var program=createProgram(gl,VS_SOURCE,FS_SOURCE);
-			gl.useProgram(program);
-			gl.program=program;
-			return true;
-		}
-
-		function createProgram(gl,VS_SOURCE,FS_SOURCE){
-			var program=gl.createProgram();
-			var vShader=loadShader(gl,gl.VERTEX_SHADER,VS_SOURCE);
-			var fShader=loadShader(gl,gl.FRAGMENT_SHADER,FS_SOURCE);
-			gl.attachShader(program,vShader);
-			gl.attachShader(program,fShader);
-			gl.linkProgram(program);
-			var linked={
-				status: gl.getProgramParameter(program,gl.LINK_STATUS),
-				log:    gl.getProgramInfoLog(program)
-			}
-			console.log("program: "+linked.status);
-			if (!linked.status)
-				console.log(linked.log);
-			return program;
-		}
-
-		function loadShader(gl,type,source){
-			var shader=gl.createShader(type);
-			gl.shaderSource(shader,source);
-			gl.compileShader(shader);
-			var compiled={
-				status:  gl.getShaderParameter(shader,gl.COMPILE_STATUS),
-				log:     gl.getShaderInfoLog(shader)
-			}
-			if (type==gl.VERTEX_SHADER)
-				console.log("vertex shader: "+compiled.status);
-			if (type==gl.FRAGMENT_SHADER)
-				console.log("fragment shader: "+compiled.status);
-			if (!compiled.status)
-				console.log(compiled.log);
-			return shader;
-		}
-	</script>
 	<style>
 		.CodeMirror {
 			border: 1px solid #eee;
 			height: auto;
 		}
 	</style>
-
 </head>
 <body>
-	<textarea id="fragment" style="display:none">
+	<textarea id="html" style="display:none">
 		<!DOCTYPE html>
 		<html lang="en">
 		<head>
@@ -209,42 +153,62 @@
 		}
 	</textarea>
 	<script>
-		document.write("HelloPoint2.html");
-		var myCodeMirror1 = CodeMirror(document.body, {
-			value: document.querySelector("#fragment").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
-			lineNumbers: true,
-			mode:  "htmlmixed"
-		});
-		document.write("<br/>HelloPoint2.js");
-		var myCodeMirror2 = CodeMirror(document.body, {
-			value: document.querySelector("#js").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
-			lineNumbers: true,
- 			mode:  "javascript"
-		});
+		log("HelloPoint2.html","#html","htmlmixed");
+		log("HelloPoint2.js","#js","javascript");
+		log("utils.js","#utils","javascript");
+		log("Canvas","#webgl","canvas");
 		
-		document.write("<br/>utils.js");
-		var myCodeMirror3 = CodeMirror(document.body, {
-			value: document.querySelector("#utils").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
-			lineNumbers: true,
- 			mode:  "javascript"
-		});
+		function log(str,type,mode){
+			//draw
+			if (type=="#example" || type=="#webgl"){
+				draw(type.replace("#",""));
+				return;
+			}
+			//vertex-shader,fragment-shader,utils
+			if (type=="#utils"){
+				var utils=$("<script>");
+				utils.html($("#utils").html().replace(/&lt;/g,"<").replace(/&gt;/g,">"));
+				utils.appendTo("head");
 
-		document.write("<br/>");
-		var canvas=document.createElement("canvas");
-		canvas.style.border="1px solid black";
-		canvas.width="400";
-		canvas.height="400";
-		var gl=canvas.getContext("webgl");
-		document.body.appendChild(canvas);
-		
-		var VS_SOURCE=document.querySelector("#vertex-shader").innerHTML;
-		var FS_SOURCE=document.querySelector("#fragment-shader").innerHTML;
-		initShaders(gl,VS_SOURCE,FS_SOURCE);
-		gl.vertexAttrib3f(gl.getAttribLocation(gl.program,"a_Position"),0.0,0.0,0.0);
-		gl.clearColor(0.1,0.3,0.7,1.0);
-		gl.clear(gl.COLOR_BUFFER_BIT);
-		gl.drawArrays(gl.POINTS,0,1);
-		
+				var code=$("#html").html().replace(/&lt;/g,"<").replace(/&gt;/g,">");
+				code=code.match(/[^>]*void[^<]*/g);
+				var vScript=$("<script>",{type:"x-shader/x-vertex",id:"vertex-shader"});
+				vScript.html(code[0]);
+				var fScript=$("<script>",{type:"x-shader/x-fragment",id:"fragment-shader"});
+				fScript.html(code[1]);
+				$("head").prepend(vScript);
+				$("head").prepend(fScript);
+			}
+			//codeMirror
+			var title=$("<div>str</div>".replace("str",str));
+			title.appendTo("body");
+			var edit=$("<div></div>");
+			edit.appendTo("body");
+			var myCodeMirror=CodeMirror(
+				edit[0],
+				{
+					value: document.querySelector(type).innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
+					lineNumbers: true,
+					mode:	mode  
+				}
+			)
+			title.click(()=>edit.toggle());
+			//edit.append($("<br/>"));
+		}
+
+		function draw(str){
+			var title=$("<div>Canvas</div>");
+			title.appendTo("body");
+			var canvas=$("<canvas id='str' width='400' height='400'></canvas>".replace("str",str));
+			canvas.css("border","1px solid #ccc");
+			canvas.appendTo("body");
+			title.click(()=>canvas.toggle());
+
+			var script=$("<script>");
+			script.html($("#js").html().replace(/&lt;/g,"<").replace(/&gt;/g,">"));
+			script.appendTo("body");
+			main();
+		}
 	</script>
 </body>
 </html>

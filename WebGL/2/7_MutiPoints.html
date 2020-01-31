@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>MutiPoints</title>
+	<script src="../../js/jquery.js"></script>
 	<script src="../codemirror/lib/codemirror.js"></script>
 	<link href="../codemirror/lib/codemirror.css" rel="stylesheet">
 	<script src="../codemirror/mode/xml/xml.js"></script>
@@ -9,62 +10,6 @@
 	<script src="../codemirror/mode/javascript/javascript.js"></script>
 	<script src="../codemirror/mode/clike/clike.js"></script>
 	<link href="../codemirror/theme/monokai.css" rel="stylesheet">
-	<script type="x-shader/x-vertex" id="vertex-shader">
-		attribute vec4 a_Position;
-		void main()
-		{
-			gl_PointSize=10.0;			
-			gl_Position=a_Position;
-		}
-	</script>
-	<script type="x-shader/x-fragment" id="fragment-shader">
-		void main()
-		{
-			gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);	//Set the point color
-		}
-	</script>
-	<script>
-		function initShaders(gl,VS_SOURCE,FS_SOURCE){
-			var program=createProgram(gl,VS_SOURCE,FS_SOURCE);
-			gl.useProgram(program);
-			gl.program=program;
-			return true;
-		}
-
-		function createProgram(gl,VS_SOURCE,FS_SOURCE){
-			var program=gl.createProgram();
-			var vShader=loadShader(gl,gl.VERTEX_SHADER,VS_SOURCE);
-			var fShader=loadShader(gl,gl.FRAGMENT_SHADER,FS_SOURCE);
-			gl.attachShader(program,vShader);
-			gl.attachShader(program,fShader);
-			gl.linkProgram(program);
-			var linked={
-				status: gl.getProgramParameter(program,gl.LINK_STATUS),
-				log:    gl.getProgramInfoLog(program)
-			}
-			console.log("program: "+linked.status);
-			if (!linked.status)
-				console.log(linked.log);
-			return program;
-		}
-
-		function loadShader(gl,type,source){
-			var shader=gl.createShader(type);
-			gl.shaderSource(shader,source);
-			gl.compileShader(shader);
-			var compiled={
-				status:  gl.getShaderParameter(shader,gl.COMPILE_STATUS),
-				log:     gl.getShaderInfoLog(shader)
-			}
-			if (type==gl.VERTEX_SHADER)
-				console.log("vertex shader: "+compiled.status);
-			if (type==gl.FRAGMENT_SHADER)
-				console.log("fragment shader: "+compiled.status);
-			if (!compiled.status)
-				console.log(compiled.log);
-			return shader;
-		}
-	</script>
 	<style>
 		.CodeMirror {
 			border: 1px solid #eee;
@@ -74,7 +19,7 @@
 
 </head>
 <body>
-	<textarea id="fragment" style="display:none">
+	<textarea id="html" style="display:none">
 		<!DOCTYPE html>
 		<html lang="en">
 		<head>
@@ -188,12 +133,21 @@
 		}
 
 		function createProgram(gl,VS_SOURCE,FS_SOURCE){
+			//Create a program object
 			var program=gl.createProgram();
+			
+			//Create shader object
 			var vShader=loadShader(gl,gl.VERTEX_SHADER,VS_SOURCE);
 			var fShader=loadShader(gl,gl.FRAGMENT_SHADER,FS_SOURCE);
+		
+			//Attach the shader objects
 			gl.attachShader(program,vShader);
 			gl.attachShader(program,fShader);
+			
+			//Link the program object
 			gl.linkProgram(program);
+			
+			//Check the result of linking
 			var linked={
 				status: gl.getProgramParameter(program,gl.LINK_STATUS),
 				log:    gl.getProgramInfoLog(program)
@@ -201,13 +155,21 @@
 			console.log("program: "+linked.status);
 			if (!linked.status)
 				console.log(linked.log);
+				
 			return program;
 		}
 
 		function loadShader(gl,type,source){
+			//Create shader object
 			var shader=gl.createShader(type);
+			
+			//Set the shader program
 			gl.shaderSource(shader,source);
+			
+			//Compile the program
 			gl.compileShader(shader);
+			
+			//Check the result of compilation
 			var compiled={
 				status:  gl.getShaderParameter(shader,gl.COMPILE_STATUS),
 				log:     gl.getShaderInfoLog(shader)
@@ -218,89 +180,67 @@
 				console.log("fragment shader: "+compiled.status);
 			if (!compiled.status)
 				console.log(compiled.log);
+				
 			return shader;
 		}
 	</textarea>
 	<script>
-		document.write("MutiPoints.html");
-		var myCodeMirror1 = CodeMirror(document.body, {
-			value: document.querySelector("#fragment").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
-			lineNumbers: true,
-			mode:  "htmlmixed"
-		});
-		document.write("<br/>MutiPoints.js");
-		var myCodeMirror2 = CodeMirror(document.body, {
-			value: document.querySelector("#js").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&"),
-			lineNumbers: true,
- 			mode:  "javascript"
-		});
+		log("MutiPoints.html","#html","htmlmixed");
+		log("MutiPoints.js","#js","javascript");
+		log("utils.js","#utils","javascript");
+		log("Canvas","#webgl","canvas");
 		
-		document.write("<br/>utils.js");
-		var myCodeMirror3 = CodeMirror(document.body, {
-			value: document.querySelector("#utils").innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">"),
-			lineNumbers: true,
- 			mode:  "javascript"
-		});
+		function log(str,type,mode){
+			//draw
+			if (type=="#example" || type=="#webgl"){
+				draw(type.replace("#",""));
+				return;
+			}
+			//vertex-shader,fragment-shader,utils
+			if (type=="#utils"){
+				var utils=$("<script>");
+				utils.html($("#utils").html().replace(/&lt;/g,"<").replace(/&gt;/g,">"));
+				utils.appendTo("head");
 
-		document.write("<br/>");
-		var canvas=document.createElement("canvas");
-		canvas.style.border="1px solid black";
-		canvas.width="400";
-		canvas.height="400";
-		var gl=canvas.getContext("webgl");
-		document.body.appendChild(canvas);
-		
-		var VS_SOURCE=document.querySelector("#vertex-shader").innerHTML;
-		var FS_SOURCE=document.querySelector("#fragment-shader").innerHTML;
-		initShaders(gl,VS_SOURCE,FS_SOURCE);
-		// Get the storage location of a_Position
-		// Write the positions of vertices to a vertex shader
-		var n = initVertexBuffers(gl);
-		if (n < 0) {
-			console.log('Failed to set the positions of the vertices');
-		}
-		// Specify the color for clearing <canvas>
-		gl.clearColor(0.0, 0.0, 0.0, 1.0);
-				
-		// Clear <canvas>
-		gl.clear(gl.COLOR_BUFFER_BIT);
-		
-		// Draw three points
-		gl.drawArrays(gl.POINTS, 0, n);
-			
-		function initVertexBuffers(gl) {
-			var vertices = new Float32Array([
-				0.0, 0.5,   -0.5, -0.5,   0.5, -0.5
-			]);
-			var n = 3; // The number of vertices
-			
-			// Create a buffer object
-			var vertexBuffer = gl.createBuffer();
-			if (!vertexBuffer) {
-				console.log('Failed to create the buffer object');
-				return -1;
+				var code=$("#html").html().replace(/&lt;/g,"<").replace(/&gt;/g,">");
+				code=code.match(/[^>]*void[^<]*/g);
+				var vScript=$("<script>",{type:"x-shader/x-vertex",id:"vertex-shader"});
+				vScript.html(code[0]);
+				var fScript=$("<script>",{type:"x-shader/x-fragment",id:"fragment-shader"});
+				fScript.html(code[1]);
+				$("head").prepend(vScript);
+				$("head").prepend(fScript);
 			}
-			
-			// Bind the buffer object to target
-			gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-			// Write date into the buffer object
-			gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
-		
-			var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
-			if (a_Position < 0) {
-				console.log('Failed to get the storage location of a_Position');
-				return -1;
-			}
-		
-			// Assign the buffer object to a_Position variable
-			gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
-		
-			// Enable the assignment to a_Position variable
-			gl.enableVertexAttribArray(a_Position);
-		
-			return n;
+			//codeMirror
+			var title=$("<div>str</div>".replace("str",str));
+			title.appendTo("body");
+			var edit=$("<div></div>");
+			edit.appendTo("body");
+			var myCodeMirror=CodeMirror(
+				edit[0],
+				{
+					value: document.querySelector(type).innerHTML.replace(/(^|\n)\t\t/g,"$1").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&"),
+					lineNumbers: true,
+					mode:	mode  
+				}
+			)
+			title.click(()=>edit.toggle());
+			//edit.append($("<br/>"));
 		}
-		
+
+		function draw(str){
+			var title=$("<div>Canvas</div>");
+			title.appendTo("body");
+			var canvas=$("<canvas id='str' width='400' height='400'></canvas>".replace("str",str));
+			canvas.css("border","1px solid #ccc");
+			canvas.appendTo("body");
+			title.click(()=>canvas.toggle());
+
+			var script=$("<script>");
+			script.html($("#js").html().replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&"));
+			script.appendTo("body");
+			main();
+		}
 	</script>
 </body>
 </html>

@@ -160,14 +160,13 @@
 				utils.appendTo("head");
 
 				var code=$("#html").html().replace(/&lt;/g,"<").replace(/&gt;/g,">");
-				code=code.match(/void[^<]*/g);
+				code=code.match(/[^>]*void[^<]*/g);
 				var vScript=$("<script>",{type:"x-shader/x-vertex",id:"vertex-shader"});
 				vScript.html(code[0]);
 				var fScript=$("<script>",{type:"x-shader/x-fragment",id:"fragment-shader"});
 				fScript.html(code[1]);
 				$("head").prepend(vScript);
 				$("head").prepend(fScript);
-				return;
 			}
 			//codeMirror
 			var title=$("<div>str</div>".replace("str",str));
