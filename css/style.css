@@ -10,7 +10,7 @@ a {
 }
 
 * {
-	background-color: black;
+	background-color:black;
 }
 
 .title {
@@ -19,4 +19,15 @@ a {
 }
 .title a{
 	color: #0f0;
+}
+
+body {
+	width: 1200px;
+	text-align: center;
+	margin:50px auto;
+}
+.content {
+	margin:0 auto;
+	text-align: center;
+	width: 600px;
 }
