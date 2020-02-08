@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8" />
 	<title>codeMirror1</title>
 	<script src="../codemirror/lib/codemirror.js"></script>
 	<link href="../codemirror/lib/codemirror.css" rel="stylesheet">
@@ -16,7 +17,7 @@
 	</style>
 </head>
 <body>
-	<span id="html">DrawRectangle.html ⇡</span><br/>
+	<div id="html">DrawRectangle.html</div>
 	<textarea id="htmlContent" style="display: none;">
 		<!DOCTYPE html>
 		<html lang="en">
@@ -32,8 +33,8 @@
 		</body>
 		</html>
 	</textarea>
-	<div id="view1"></div >
-	<span id="js">DrawRectangle.js</span><br/>
+
+	<div id="js">DrawRectangle.js</div>
 	<textarea id="jsContent">
 		function main(){
 			//Retrieve <canvas> element
@@ -53,44 +54,42 @@
 	</textarea>
 
 	<script>
-		var button=document.getElementById("html");
-		button.style.border="0px solid whtie";
-
-		var myTextarea1 = document.getElementById('htmlContent');
-		myTextarea1.innerHTML=myTextarea1.innerHTML.replace(/(^|\n)\t\t/g,"$1");
-
-		var CodeMirrorEditor1 = CodeMirror.fromTextArea(myTextarea1, {
+		var myTextarea1 = $("#htmlContent");
+		myTextarea1.html(myTextarea1.html().replace(/(^|\n)\t\t/g,"$1"));
+		var CodeMirrorEditor1 = CodeMirror.fromTextArea(myTextarea1[0], {
 			mode:"htmlmixed",
 			lineNumbers:true
 		});
 
-		var myTextarea2 = document.getElementById('jsContent');
-		myTextarea2.innerHTML=myTextarea2.innerHTML.replace(/(^|\n)\t\t/g,"$1");
+		var button=$("#js");
+		button.css("color","grey");
 
-        var CodeMirrorEditor2 = CodeMirror.fromTextArea(myTextarea2, {
+		var myTextarea2 = $('#jsContent');
+		myTextarea2.html(myTextarea2.html().replace(/(^|\n)\t\t/g,"$1"));
+        var CodeMirrorEditor2 = CodeMirror.fromTextArea(myTextarea2[0], {
 			mode:"javascript",
 			lineNumbers:true
 		});
 		
-
-		
 		var tag="view";
-		button.onclick=function(){
-			if (tag=="view")  {
-				CodeMirrorEditor1.toTextArea();
-				myTextarea1.style.display="none";
-				button.innerHTML="DrawRectangle.html ⇣";
-				tag="none";
+		button.click(
+			()=>{
+				if (tag=="view")  {
+					CodeMirrorEditor2.toTextArea();
+					myTextarea2.css("display","none");
+					button.html("DrawRectangle.js");
+					tag="none";
+				}
+				else{
+					CodeMirrorEditor2=CodeMirror.fromTextArea(myTextarea2[0],{
+						mode:"javascript",
+						lineNumbers:"true"
+					});
+					button.html("DrawRectangle.js");
+					tag="view";
+				}
 			}
-			else{
-				CodeMirrorEditor1=CodeMirror.fromTextArea(myTextarea1,{
-					mode:"htmlmixed",
-					lineNumbers:"true"
-				});
-				button.innerHTML="DrawRectangle.html ⇡";
-				tag="view";
-			}
-		}
+		);
 
 		/*document.write("CodeMirror.version: &nbsp;"+CodeMirror.version+"<br/>");
 		var doc=CodeMirrorEditor1.getDoc();

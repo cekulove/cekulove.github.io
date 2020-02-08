@@ -22,19 +22,25 @@
 		<html lang="en">
 		<head>
 			<meta charset="utf-8" />
-			<title>RotatedTriagnle_Matrix</title>
+			<title>Texture</title>
 			<script type="x-shader/x-vertex" id="vertex-shader">
 				attribute vec4 a_Position;
-				uniform mat4 u_xformMatrix;
+				attribute vec2 a_TexCoord;
+				varying vec2 v_TexCoord;
 				void main()
 				{
-					gl_Position=u_xformMatrix*a_Position;   //Set the vertex coordinates of the point
+					gl_Position = a_Position;	//Set the vertex coordinates of the point
+					v_TexCoord = a_TexCoord;
 				}
 			</script>
 			<script type="x-shader/x-fragment" id="fragment-shader">
+				#ifdef GL_ES
+					precision mediump float
+				#endif
+				uniform sampler2D u_Sampler
+				varying vec2 v_TexCoord
 				void main()
-				{
-					gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);	//Set the point color
+					gl_FragColor = texture2D(u_Sampler, v_TexCoord);
 				}
 			</script>
 			<script src="utils.js"></script>
