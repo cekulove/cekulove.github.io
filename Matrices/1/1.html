@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Matrix</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+</head>
+<body>
+	矩阵<br/>
+	`A=[[5,1,2],[3,0,-5]]`<br/>
+	`A[2,2]=0`<br/>
+	`a_(2,2)=0`<br/>
+	`a_(1,3)=2`<br/>
+	<hr/>
+	矩阵相加<br/>
+	`A=[[3,-1],[2,0]]`&nbsp;&nbsp;&nbsp;&nbsp;
+	`B=[[-7,2],[3,5]]`<br/>
+	`A+B=[[3-7,-1+2],[2+3,0+5]]=[[-4,1],[5,5]]`<br/>
+	<hr/>
+	矩阵乘法<br/>
+	`[[2,-3],[7,5]]xx[[10,-8],[12,-2]]=[[2xx10+(-3)xx12,2xx(-8)+(-3)xx(-2)],[7xx10+5xx12,7xx(-8)+5xx(-2)]]=[[-16,-10],[130,-66]]`<br/>
+	`[[1,2],[3,4]]xx[[5,6],[7,8]]=[[1xx5+2xx7,1xx6+2xx8],[3xx5+4xx7,3xx6+4xx8]]=[[19,22],[43,50]]`<br/>
+	`[[5,6],[7,8]]xx[[1,2],[3,4]]=[[5xx1+6xx3,5xx2+6xx4],[7xx1+8xx3,7xx2+8xx4]]=[[23,34],[31,46]]`<br/>
+	<hr/>
+	`[[3,1,2],[-2,0,5]]xx[[-1,3],[0,5],[2,5]]=[[3xx(-1)+1xx0+2xx2,3xx3+1xx5+2xx5],[(-2)xx(-1)+0xx2+5xx2,(-2)xx3+0xx5+5xx5]]=[[1,24],[12,19]]`<br/>
+	`underset(2xx3)(A)xxunderset(3xx2)(B)=underset(2xx2)(C)`<br/>
+	`[[-1,3],[0,5],[2,5]]xx[[3,1,2],[-2,0,5]]=[[(-1)xx3+3xx(-2),(-1)xx1+3xx0,(-1)xx2+3xx5],[0xx3+5xx(-2),0xx1+5xx0,0xx2+5xx5],[2xx3+5xx(-2),2xx1+5xx0,2xx2+5xx5]]=[[-9,-1,13],[-10,0,25],[-4,2,29]]`<br/>
+	`underset(3xx2)(A)xxunderset(2xx3)(B)=underset(3xx3)(C)`<br/>
+	`underset(ixxj)(A)xxunderset(jxxi)(B)=underset(ixxi)(C)`<br/>
+	<hr/>
+	单位矩阵<br/>
+	`I*A=A`<br/>
+	`A*I=A`<br/>
+	`underset(2xx2)(I)=[[1,0],[0,1]]`<br/>
+	`underset(3xx3)(I)=[[1,0,0],[0,1,0],[0,0,1]]`<br/>
+	`underset(4xx4)(I)=[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]`<br/>
+	`* * * * * *`<br/>
+	`* * * * * *`<br/>
+	`* * * * * *`<br/>
+	<hr/>
+	矩阵的逆<br/>
+	`A^(-1)A=I`<br/>
+	`A A^(-1)=I`<br/>
+	`A=[[a,b],[c,d]]`&nbsp;&nbsp;&nbsp;&nbsp;`A^(-1)=1/(ad-bc)[[d,-b],[-c,a]]`<br/>
+	`|A|=ad-bc`&nbsp;&nbsp;&nbsp;&nbsp;`A^(-1)=1/(|A|)[[d,-b],[-c,a]]`<br/>
+	<hr/>
+	3x3矩阵求逆1<br/>
+	`A=[[1,0,1],[0,2,1],[1,1,1]]`<br/><br/>
+	<!--`[[cancel(1),cancel(0),cancel(1)],[cancel(0),2,1],[cancel(1),1,1]] [[cancel(1),cancel(0),cancel(1)],[0,cancel(2),1],[1,cancel(1),1]] * * * * * * `<br/><br/>-->
+	`[[(|[cancel(1),cancel(0),cancel(1)],[cancel(0),2,1],[cancel(1),1,1]|,|[cancel(1),cancel(0),cancel(1)],[0,cancel(2),1],[1,cancel(1),1]|,|[cancel(1),cancel(0),cancel(1)],[0,2,cancel(1)],[1,1,cancel(1)]|)],
+	[(|[cancel(1),0,1],[cancel(0),cancel(2),cancel(1)],[cancel(1),1,1]|,|[1,cancel(0),1],[cancel(0),cancel(2),cancel(1)],[1,cancel(1),1]|,|[1,0,cancel(1)],[cancel(0),cancel(2),cancel(1)],[1,1,cancel(1)]|)],
+	[(|[cancel(1),0,1],[cancel(0),2,1],[cancel(1),cancel(1),cancel(1)]|,|[1,cancel(0),1],[0,cancel(2),1],[cancel(1),cancel(1),cancel(1)]|,|[1,0,cancel(1)],[0,2,cancel(1)],[cancel(1),cancel(1),cancel(1)]|)]]=
+	[[(|[2,1],[1,1]|,|[0,1],[1,1]|,|[0,2],[1,1]|)],
+	[(|[0,1],[1,1]|,|[1,1],[1,1]|,|[1,0],[1,1]|)],
+	[(|[0,1],[2,1]|,|[1,1],[0,1]|,|[1,0],[0,2]|)]]=
+	overset("Matrix of minors")([[1,-1,-2],[-1,0,1],[-2,1,2]])`<br/>
+	<br/>
+	`[[+,-,+],[-,+,-],[+,-,+]]      overset("Matrix of minors")([[1,-1,-2],[-1,0,1],[-2,1,2]])=
+	overset("Matrix of cofactors")([[1,1,-2],[1,0,-1],[-2,-1,2]])
+	underset("transpose")(overset("adj(A)")(rArr))overset("Adjugate matrix")([[1,1,-2],[1,0,-1],[-2,-1,2]])`<br/><br/>
+	`|A|=2+0+0-2-0-1=-1=1*|[2,1],[1,1]|-0*|[0,1],[1,1]|+1*|[0,2],[1,1]|`<br/><br/>
+	`A^(-1)=1/(|A|)agj(A)=[[-1,-1,2],[-1,0,1],[2,1,-2]]`<br/>
+</body>
+</html>
