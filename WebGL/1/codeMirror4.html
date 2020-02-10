@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>codeMirror2</title>
+	
+	<script src="D:/GitHub/cekulove.github.io/WebGL/codemirror/lib/codemirror.js"></script>
+	<link href="D:/GitHub/cekulove.github.io/WebGL/codemirror/lib/codemirror.css" rel="stylesheet">
+	<script src="D:/GitHub/cekulove.github.io/WebGL/codemirror/mode/xml/xml.js"></script>
+	<script src="D:/GitHub/cekulove.github.io/WebGL/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="D:/GitHub/cekulove.github.io/WebGL/codemirror/mode/javascript/javascript.js"></script>
+	<script src="D:/GitHub/cekulove.github.io/js/jquery.js"></script>
+	<style>
+		.CodeMirror {
+			border: 1px solid #eee;
+			height: auto;
+			width: 650px;
+		}
+	</style>
+</head>
+<body>
+	<span id="html">DrawRectangle.html</span><br/>
+	<textarea id="htmlContent" style="display: none;">
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="utf-8" />
+			<title>Draw a blue rectangle (webgl version)</title>
+			<script type="x-shader/x-vertex" id="vertex-shader">
+				attribute vec4 a_Position;
+				void main(){
+					gl_Position=a_Position;
+				}
+			</script>
+			<script type="x-shader/x-fragment" id="fragment-shader">
+				void main(){
+					gl_FragColor=vec4(0.7,0.3,0.4,1.0);
+				}
+			</script>
+		</head>
+		<body>
+			<canvas id="webgl" width="400" height="400">
+				Please use a browser that supports "canvas".
+			</canvas>
+			<script>
+				let canvas=document.getElementById("webgl");
+				let gl=canvas.getContext("webgl");
+				let VS_SOURCE=document.querySelector("#vertex-shader").innerHTML;
+				let FS_SOURCE=document.querySelector("#fragment-shader").innerHTML;
+				initShaders(gl,VS_SOURCE,FS_SOURCE);
+				let n=initVertexBuffers(gl);
+				gl.clearColor(0.0,0.0,0.0,1.0);
+				gl.clear(gl.COLOR_BUFFER_BIT);
+				gl.drawArrays(gl.TRIANGLE_FAN,0,n);
+
+				function initShaders(gl,VS_SOURCE,FS_SOURCE){
+					let program=createProgram(gl,VS_SOURCE,FS_SOURCE);
+					gl.useProgram(program);
+					gl.program=program;
+					return true;
+				}
+				function createProgram(gl,VS_SOURCE,FS_SOURCE){
+					let program=gl.createProgram();
+					let vshader=loadShader(gl,gl.VERTEX_SHADER,VS_SOURCE);
+					let fshader=loadShader(gl,gl.FRAGMENT_SHADER,FS_SOURCE);
+					gl.attachShader(program,vshader);
+					gl.attachShader(program,fshader);
+					gl.linkProgram(program);
+					return program;
+				}
+				function loadShader(gl,type,source){
+					let shader=gl.createShader(type);
+					gl.shaderSource(shader,source);
+					gl.compileShader(shader);
+					return shader;
+				}
+				function initVertexBuffers(){
+					let vertices=new Float32Array([
+						0.5,0.5,	-0.5,0.5,	-0.5,-0.5,	0.5,-0.5
+					]);
+					let n=4;
+					let vbo=gl.createBuffer();
+					gl.bindBuffer(gl.ARRAY_BUFFER,vbo);
+					gl.bufferData(gl.ARRAY_BUFFER,vertices,gl.STATIC_DRAW);
+					let a_Position=gl.getAttribLocation(gl.program,"a_Position");
+					gl.vertexAttribPointer(a_Position,2,gl.FLOAT,false,0,0);
+					gl.enableVertexAttribArray(a_Position);
+					return n;
+				}
+			</script>
+		</body>
+		</html>
+	</textarea>
+	<div id="view1"></div>
+
+	<span id="draw">Canvas</span><br/>
+	<canvas id="webgl" width="400" height="400" style="border:1px solid black"></canvas>
+
+	<script>
+		var myTextarea1 = $("#htmlContent")[0];
+		myTextarea1.innerHTML=myTextarea1.innerHTML.replace(/(^|\n)\t\t/g,"$1");
+		var text1=myTextarea1.innerHTML.replace(/&lt;/g,"<").replace(/&gt;/g,">");
+		var CodeMirrorEditor1 = CodeMirror(
+			$("#view1")[0],
+			{
+				value:	text1,
+				mode:	"htmlmixed",
+				lineNumbers:true
+			}
+		)
+
+		var code=$("#htmlContent").html().replace(/&lt;/g,"<").replace(/&gt;/g,">");
+		code=code.match(/[^>]*void[^<]*/g);
+
+		var vertex=document.createElement("script");
+		vertex.innerHTML=code[0];
+		vertex.id="vertex-shader";
+		vertex.type="x-shader/x-vertex";
+		document.head.appendChild(vertex);
+
+		var fragment=document.createElement("script");
+		fragment.innerHTML=code[1];
+		fragment.id="fragment-shader";
+		fragment.type="x-shader/x-fragment";
+		document.head.appendChild(fragment);
+
+		var main=$("#htmlContent").html().replace(/&lt;/g,"<").replace(/&gt;/g,">");
+		main=main.match(/[^>]*function[^<]*/g)[0];
+		var script=document.createElement("script");
+		script.innerHTML=main;
+		document.body.appendChild(script);
+
+		$("#html").click(()=>$("#view1").toggle());
+		$("#draw").click(()=>$("#webgl").toggle());
+		
+	</script>
+</body>
+</html>
+
+
+
+
