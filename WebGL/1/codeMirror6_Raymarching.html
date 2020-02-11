@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>raymarching</title>
+  <script src="https://lib.baomitu.com/codemirror/5.47.0/codemirror.min.js"></script>
+  <link href="https://lib.baomitu.com/codemirror/5.47.0/codemirror.min.css" rel="stylesheet">
+  <script src="https://lib.baomitu.com/codemirror/5.47.0/mode/javascript/javascript.min.js"></script>
+  <script src="https://lib.baomitu.com/codemirror/5.47.0/mode/clike/clike.min.js"></script>
+  <link href="https://lib.baomitu.com/codemirror/5.47.0/theme/monokai.min.css" rel="stylesheet">
+	<script type="x-shader/x-fragment" text="text/x-fragment" id="fragment-shader">
+		#version 300 es
+		precision mediump float;
+		uniform float time;
+		out vec4 fragColor;
+
+		float sdEllipsoid( in vec3 p, in vec3 r )
+		{ 
+			return (length( p/r ) - 1.0) * min(min(r.x,r.y),r.z);
+		}
+		
+		float sdTorus( vec3 p, vec2 t )
+		{
+			vec2 q = vec2(length(p.xz)-t.x,p.y);
+			return length(q)-t.y;
+		}
+			
+		float box(vec3 pos, vec3 b)
+		{
+			 return length(max(abs(pos)-b,0.0));
+		}
+		
+		float primitive(vec3 pos)
+		{
+			float geometry1=box(pos,vec3(0.5,1.0,1.0));
+			float geometry2=sdTorus(pos,vec2(1.0,0.55));
+			return max(geometry1,-geometry2);
+		}
+		
+		mat4 invert(mat4 m)
+		{
+			return m;
+		}
+		
+		//Rotation/Translation
+		float opTx( vec3 p/*,mat4 m*/ )
+		{
+			float b=time/1000.0;
+			mat4 m=mat4(
+				cos(b),sin(b), 0.0, 0.0,
+				-sin(b),cos(b),0.0, 0.0,
+				0.0, 0.0, 1.0, 0.0,
+				0.0 ,0.0, 0.0, 1.0
+			);
+			vec4 q = invert(m)*vec4(p,1.0);
+			//vec3 q=p;
+			return primitive(q.xyz);
+		}
+
+		float distfunc(vec3 pos) 
+		{
+			//return sdEllipsoid(pos,vec3(1.0,0.5,1.5));
+			//return max(box(pos,vec3(0.5,1.5,1.5)),-sdTorus(pos,vec2(1.5,0.75)));
+			return opTx(pos);
+		}
+			
+		void main()
+		{	
+			vec2 iResolution=vec2(1000.0);
+			float t=time/1000.0;
+			vec3 cameraOrigin = vec3(2.0, 2.0, 2.0);
+			vec3 cameraTarget = vec3(0.0, 0.0, 0.0);
+			vec3 upDirection = vec3(0.0, 1.0, 0.0);
+			vec3 cameraDir = normalize(cameraTarget - cameraOrigin);
+			vec3 cameraRight = normalize(cross(upDirection, cameraOrigin));
+			vec3 cameraUp = cross(cameraDir, cameraRight);
+			vec2 screenPos = -1.0 + 2.0 * gl_FragCoord.xy / iResolution.xy; 
+			screenPos.x *= iResolution.x / iResolution.y;
+			vec3 rayDir = normalize(cameraRight * screenPos.x + cameraUp * screenPos.y + cameraDir); 
+			const int MAX_ITER = 100;
+			const float MAX_DIST = 50.0;
+			const float EPSILON = 0.02; 
+			float totalDist = 0.0; 
+			
+			/*float radian=t*0.1;
+			float b=radian;
+			mat4 m=mat4(
+				cos(b),sin(b), 0.0, 0.0,
+				-sin(b),cos(b),0.0, 0.0,
+				0.0, 0.0, 1.0, 0.0,
+				0.0 ,0.0, 0.0, 1.0
+			);*/
+			
+			vec3 pos = cameraOrigin;
+			float dist = EPSILON; 
+			for (int i = 0; i < MAX_ITER; i++) 
+			{ 
+				if (dist < EPSILON || totalDist > MAX_DIST) 
+					break;
+				dist = distfunc(pos);
+				totalDist += dist; 
+				pos += dist * rayDir; 
+			} 	
+			vec2 eps = vec2(0.0, EPSILON); 
+			vec3 normal = normalize(
+							vec3( 
+								distfunc(pos + eps.yxx) - distfunc(pos - eps.yxx),
+								distfunc(pos + eps.xyx) - distfunc(pos - eps.xyx),
+								distfunc(pos + eps.xxy) - distfunc(pos - eps.xxy)
+							)
+						);		
+		
+			float diffuse = max(0.0, dot(-rayDir, normal));
+			float specular = pow(diffuse, 32.0);
+			vec3 color = vec3(diffuse + specular); 
+			if (dist < EPSILON)
+			{
+				// Lighting code
+				fragColor = vec4(color, 1.0);
+			} 
+			else 
+			{
+				fragColor = vec4(0.0,0.0,0.0,1.0);
+			} 	
+		}
+  </script>
+  <style>
+  	.CodeMirror {
+			border: 1px solid #eee;
+			height: auto;
+  	}
+  </style>
+
+</head>
+<body>
+  <script>
+    var myCodeMirror = CodeMirror(document.body, {
+  		value: document.querySelector("#fragment-shader").innerHTML.replace(/\n\t\t/g,"\n"),
+  		lineNumbers: true,
+ 			mode:  "clike"
+		});
+  </script>
+</body>
+</html>

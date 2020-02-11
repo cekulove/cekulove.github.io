@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>liquid</title>
+  <script src="https://lib.baomitu.com/codemirror/5.47.0/codemirror.min.js"></script>
+  <link href="https://lib.baomitu.com/codemirror/5.47.0/codemirror.min.css" rel="stylesheet">
+  <script src="https://lib.baomitu.com/codemirror/5.47.0/mode/javascript/javascript.min.js"></script>
+  <script src="https://lib.baomitu.com/codemirror/5.47.0/mode/clike/clike.min.js"></script>
+  <link href="https://lib.baomitu.com/codemirror/5.47.0/theme/monokai.min.css" rel="stylesheet">
+	<script type="x-shader/x-fragment" text="text/x-fragment" id="fragment-shader">
+{% assign colors = "orange button,red button,blue button,green button,magenta button,orangellow button" | split: "," %}
+<div class="animationButton">
+	{% for category in site.categories %}
+		{% for color in colors %}
+			<a href="{{ category.last.last.url }}" class="{% cycle colors[0],colors[1],colors[2],colors[3],colors[4],colors[5] %}">
+				{{ category | first }}
+			</a>
+			{% break %}
+		{% endfor %}
+	{% endfor %}
+</div>
+  </script>
+  <style>
+  	.CodeMirror {
+			border: 1px solid #eee;
+			height: auto;
+  	}
+  </style>
+
+</head>
+<body>
+  <script>
+    var myCodeMirror = CodeMirror(document.body, {
+  		value: document.querySelector("#fragment-shader").innerHTML.replace(/\n\t\t/g,"\n"),
+  		lineNumbers: true,
+ 			mode:  "clike"
+		});
+  </script>
+</body>
+</html>
