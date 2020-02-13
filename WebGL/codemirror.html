@@ -9,6 +9,7 @@
 	<style>
 		.CodeMirror {
 			border: 1px solid #777;
+			box-shadow: 5px 5px 5px #777;
 			height: auto;
 			width: 500px;
 			margin-bottom: 10px;
@@ -16,7 +17,8 @@
 	</style>
 </head>
 <body>
-	<script>
+	<div id="content"></div>
+	<script id="script">
 		//可以查看CodeMirror当前版本
 		document.write(CodeMirror.version);
 
@@ -77,6 +79,25 @@
 		//获取当前编辑器的content						doc.getValue(?separator: string) → string
 		let value=myDoc2.getValue();
 		document.write(value+"<br/>");
+	</script>
+	<script>
+		let content=document.getElementById("content");
+		let option3={
+			value:document.getElementById("script").innerHTML.replace(/^\n/,"").replace(/(^|\n)\t\t/g,"$1"),
+			mode:"javascript",
+			lineNumbers:true,
+			scrollbarStyle:"null"
+		}
+		CodeMirror(
+			(elt)=>{
+				elt.id="content";
+				content.parentNode.replaceChild(elt,content);
+			},
+			option3
+		);
+		content=document.getElementById("content");
+		content.style.height="auto";
+		content.style.width="750px";
 	</script>
 </body>
 </html>
