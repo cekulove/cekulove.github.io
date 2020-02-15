@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>glslView</title>
+	<script src="codemirror/lib/codemirror.js"></script>
+	<link href="codemirror/lib/codemirror.css" rel="stylesheet">
+	<link href="codemirror/theme/monokai.css" rel="stylesheet">
+	<script src="codemirror/mode/javascript/javascript.js"></script>
+	<script src="codemirror/mode/clike/clike.js"></script>
+	<script type="x-shader/x-vertex" id="vertex-shader">
+		void main(){
+			gl_PointSize=500.0;
+			gl_Position=vec4(0.0,0.0,0.0,1.0);
+		}
+	</script>
+	<script type="x-shader/x-fragment" id="fragment-shader">
+		precision mediump float;
+		uniform float time;
+		uniform vec2 resolution;
+		void main(){
+			vec2 pos=(resolution-gl_FragCoord.xy*2.)/min(resolution.x,resolution.y);
+			vec2 center=vec2(0.0);
+			float radius=0.5;
+			if(length(pos-center)<radius)
+				gl_FragColor=vec4(0.0,0.7,0.0,1.0);
+			else
+				gl_FragColor=vec4(0.0,0.0,0.0,1.0);
+		}
+	</script>
+	<style>
+		.CodeMirror {
+			width: 600px;
+			height: auto;
+			border: 1px solid#777;
+			box-shadow: 5px 5px 5px #777;
+			margin-bottom: 10px;
+		}
+		.button {
+			border: 1px solid black;
+			border-radius: 5px 5px 0 0;
+			display: inline-block;
+			padding: 0 10px;
+			color: lightblue;
+			background-color:#333;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="start" class="button">draw</div>
+	<div id="stop" class="button">---</div>
+	<div id="edit" style="width:500px;height:500px;border:1px solid black"></div>
+	<canvas id="webgl" width="500" height="500" style="width:500px;height:500px;border:1px solid black"></canvas>
+	<script>
+		let canvas=document.getElementById("webgl");
+		canvas.style.display="inline-block"
+		let gl=canvas.getContext("webgl");
+		let VS_SOURCE=document.querySelector("#vertex-shader").innerHTML;
+		let FS_SOURCE=document.querySelector("#fragment-shader").innerHTML;
+		FS_SOURCE=FS_SOURCE.replace(/^\n([\s\S]*)\n\t*$/,"$1").replace(/(^|\n)\t\t/g,"$1");
+
+		let edit=document.getElementById("edit");
+		let option={
+			value: FS_SOURCE,
+			lineNumbers: true,
+			mode: "x-shader/x-fragment",
+			theme: "monokai",
+			scrollbarStyle:"null"
+		}
+		let cm=CodeMirror((elt)=>{edit.parentNode.replaceChild(elt,edit)},option);
+
+		let start=document.getElementById("start");
+		let stop=document.getElementById("stop");
+		start.onclick=()=>{
+			if (stop.innerHTML=="stop"){
+				alert("请先停止当前绘制程序!");
+				return;
+			}
+			let status="none";
+			stop.innerHTML="stop";
+			stop.onclick=()=>{status="stop";console.log(status)};
+			let time=Date.now();
+			FS_SOURCE=cm.doc.getValue();
+			console.log("\nstart draw");
+			let newProgram=createProgram(gl,VS_SOURCE,FS_SOURCE);
+			gl.useProgram(newProgram);
+			gl.program=newProgram;
+			let i_Time=gl.getUniformLocation(gl.program,"time");
+			let resolution=gl.getUniformLocation(gl.program,"resolution");
+			let startTime=Date.now()
+			gl.uniform2f(resolution,500.0,500.0);
+			function draw(){
+				if	(status=="stop"){
+					stop.innerHTML="---"
+					status="none";
+					return;
+				}
+				time=(Date.now()-startTime)/1000.0;
+				gl.uniform1f(i_Time,time);
+				gl.clear(gl.COLOR_BUFFER_BIT);
+				gl.drawArrays(gl.POINTS,0,1);
+				//console.log("drawing...");
+				requestAnimationFrame(draw);
+			}
+			draw();
+		}
+
+		console.log("~~~ Shader Test ~~~");
+		let program=createProgram(gl,VS_SOURCE,FS_SOURCE);
+		gl.useProgram(program);
+		gl.program=program;
+		console.log("~~~ Shader Test  END ~~~");
+		let resolution=gl.getUniformLocation(gl.program,"resolution");
+		let time=gl.getUniformLocation(gl.program,"time");
+		let startTime=Date.now();
+		gl.uniform2f(resolution,500.0,500.0);
+		gl.uniform1f(time,Date.now()-startTime);
+		gl.clearColor(0.0,0.0,0.0,1.0);
+		gl.clear(gl.COLOR_BUFFER_BIT);
+		gl.drawArrays(gl.POINTS,0,1);
+
+
+		function initShaders(gl,VS_SOURCE,FS_SOURCE){
+			let program=createProgram(gl,VS_SOURCE,FS_SOURCE);
+			gl.useProgram(program);
+			gl.program=program;
+			return true;
+		}
+		function createProgram(gl,VS_SOURCE,FS_SOURCE){
+			let program=gl.createProgram();
+			let vShader=loadShader(gl,gl.VERTEX_SHADER,VS_SOURCE);
+			let fShader=loadShader(gl,gl.FRAGMENT_SHADER,FS_SOURCE);
+			gl.attachShader(program,vShader);
+			gl.attachShader(program,fShader);
+			gl.linkProgram(program);
+			let linked={
+				status:	gl.getProgramParameter(program,gl.LINK_STATUS),
+				log:	gl.getProgramInfoLog(program)
+			}
+			console.log("Program: "+linked.status);
+			if (!linked.status)
+				console.log(linked.log);
+			return program;
+		}
+		function loadShader(gl,type,source){
+			let shader=gl.createShader(type);
+			gl.shaderSource(shader,source);
+			gl.compileShader(shader);
+			let compiled={
+				status:	gl.getShaderParameter(shader,gl.COMPILE_STATUS),
+				log:	gl.getShaderInfoLog(shader)
+			}
+			if (type==gl.VERTEX_SHADER)
+				console.log("Vertex Shader: "+compiled.status);
+			if (type==gl.FRAGMENT_SHADER)
+				console.log("Fragment Shader: "+compiled.status);
+			if (!compiled.status)
+				console.log(compiled.log)
+			return shader;
+		}
+		function render(){
+			gl.clear(gl.COLOR_BUFFER_BIT);
+			gl.drawArrays(gl.POINTS,0,1);
+			requestAnimationFrame(render);
+		}
+	</script>
+</body>
+</html>
