@@ -3,7 +3,7 @@ vpath %.a lib
 
 OBJ=libfl.a
 
-flex:=$(CURDIR)/flex/win_flex
+flex:=$(CURDIR)/flex/win_flex #flex存放路径
 
 all: $(OBJ)
 	$(flex) flex.l
