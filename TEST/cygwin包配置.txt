@@ -5,6 +5,9 @@ binutils
 gcc-core
 gcc-g++
 gdb
+
 git
 make
+
 vim
+gvim
