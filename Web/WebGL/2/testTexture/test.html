@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>test</title>
+    <script type="x-shader/x-vertex" id="vertex-shader">
+        attribute vec4 a_Position;
+        attribute vec2 a_TexCoord;
+        varying vec2 v_TexCoord;
+        void main(){
+            gl_Position=a_Position;
+            v_TexCoord=a_TexCoord;
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragment-shader">
+        precision mediump float;
+        uniform sampler2D u_Sampler;
+        varying vec2 v_TexCoord;
+        void main(){
+            gl_FragColor=texture2D(u_Sampler,v_TexCoord);
+        }
+    </script>
+    <script src="utils.js"></script>
+</head>
+<body onload="main()">
+    <canvas id="webgl" width="400" height="400"></canvas>
+    <script src="main.js"></script>
+</body>
+</html>
