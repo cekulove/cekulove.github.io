@@ -38,4 +38,4 @@ var server= http.createServer(function(req,res){
 }).listen(8888);
 
 console.log("服务器开启成功");
-console.log("localhost:8888/triangle.html")
+console.log("localhost:8888")
