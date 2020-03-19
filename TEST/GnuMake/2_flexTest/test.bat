@@ -1,1 +1,0 @@
-@ver | find "Windows" && echo %errorlevel%
