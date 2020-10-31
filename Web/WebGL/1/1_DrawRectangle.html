@@ -4,11 +4,11 @@
 	<meta charset="utf-8" />
 	<title>DrawRectangle</title>
 	<script src="../../js/jquery.js"></script>
-	<script src="../codemirror/lib/codemirror.js"></script>
-	<link href="../codemirror/lib/codemirror.css" rel="stylesheet">
-	<script src="../codemirror/mode/xml/xml.js"></script>
-	<script src="../codemirror/mode/htmlmixed/htmlmixed.js"></script>
-	<script src="../codemirror/mode/javascript/javascript.js"></script>
+	<script src="../../js/codemirror/lib/codemirror.js"></script>
+	<link href="../../js/codemirror/lib/codemirror.css" rel="stylesheet">
+	<script src="../../js/codemirror/mode/xml/xml.js"></script>
+	<script src="../../js/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="../../js/codemirror/mode/javascript/javascript.js"></script>
 	<style>
 		.CodeMirror {
 			border: 1px solid #eee;
@@ -73,13 +73,13 @@
 				}
 			)
 			title.click(()=>code.toggle());
-			//code.append($("<br/>"));
+			code.append($("<br/>"));
 		}
 
 		function draw(str){
 			var title=$("<div>Canvas</div>");
 			title.appendTo("body");
-			var canvas=$("<canvas id='str' width='400' height='400'></canvas>".replace("str",str));
+			var canvas=$("<canvas id='str' width='400' height='400' </canvas>".replace("str",str));
 			canvas.css("border","1px solid #ccc");
 			canvas.appendTo("body");
 			title.click(()=>canvas.toggle());
