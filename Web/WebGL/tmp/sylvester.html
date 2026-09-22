@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>sylvester</title>
+	<script src="../../js/sylvester/sylvester.js"></script>
+</head>
+<body>
+	<script>
+		let M1=$M([
+			[ 1, 2, 3, 4],
+			[ 5, 6, 7, 8],
+			[ 9,10,11,12],
+			[13,14,15,16]
+		])
+		document.write(M1.inspect().replace(/\n/g,"<br/>"));
+		document.write("<br/><br/>");
+
+		document.write(M1.transpose().inspect().replace(/\n/g,"<br/>"));
+	</script>
+</body>
+</html>
